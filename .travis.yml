@@ -3,6 +3,7 @@ before_script:
   - npm install -g gatsby-cli
   - npm install -g prettier
   - npm install gh-pages
+  - npm install
 node_js:
   - "10"
 
