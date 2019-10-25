@@ -8,11 +8,10 @@ node_js:
   - "10"
 
 script:
-  # check for syntax standards
+  # ensure these pass before merge into dev/master
   - prettier --check "**/*.js"
-
-  # check to see if it builds
   - npm run build
+  - npm run test
 
 deploy:
   provider: script
