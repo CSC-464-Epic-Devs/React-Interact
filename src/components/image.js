@@ -15,9 +15,11 @@ import Img from "gatsby-image";
 
 const Image = props => {
   const {imgfile} = props;
+  //string str = "`query { placeholderImage: file(relativePath: { eq: \"" + {imgfile} +"\" }) \{ childImageSharp \{fluid(maxWidth: 300) \{...GatsbyImageSharpFluid\}\}\}\}`"
+
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-icon.png" }) {
+      placeholderImage: file(relativePath: { eq: "ReactInteractLogo.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -26,7 +28,7 @@ const Image = props => {
       }
     }
   `);
-
+  //const data = useStaticQuery(graphql,{str});
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 };
 

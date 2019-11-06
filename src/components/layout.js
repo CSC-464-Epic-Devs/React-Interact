@@ -36,9 +36,21 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          <div style={{
+            float:"left",
+            fontSize: "15px"
+          }}>
+          Copyright © {new Date().getFullYear()},
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          React Interact
+          </div>
+          <div style={{
+            textAlign: "end",
+            fontSize: "15px"
+          }}>
+            All rights reserved by &nbsp;
+            <a href="https://github.com/CSC-464-Regular-Devs">Regular Devs</a>
+          </div>
         </footer>
       </div>
     </>
