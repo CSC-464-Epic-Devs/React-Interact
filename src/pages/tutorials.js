@@ -23,6 +23,7 @@ const Tutorials = () => (
             }}>
             Tutorials
             </h1>
+            <br/><br/>
         {data.map(module => (
         <TutorialBlock title={module.title} description={module.description} />
         ))}
