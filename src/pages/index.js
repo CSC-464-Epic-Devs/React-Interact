@@ -4,19 +4,17 @@ import { Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Image from "../components/image";
+import ContentBanner from "../components/banner";
 import Button from "@material-ui/core/Button";
 
-const bannerHeight = "250px";
-
 const TopBanner = () => (
-  <div
+  <ContentBanner
     style={{
       background: "black",
-      color: "white",
-      height: bannerHeight
+      color: "white"
     }}
   >
-    <div style={{ width: bannerHeight, float: "right" }}>
+    <div style={{ height: "100px", float: "right" }}>
       <Image />
     </div>
     <h1>React Interact</h1>
@@ -25,46 +23,40 @@ const TopBanner = () => (
       <Button
         variant="contained"
         color="primary"
-        style={{ marginRight: "10%", background: "teal" }}
+        style={{ marginRight: "10%" }}
       >
         Learn ReactJS
       </Button>
 
-      <Button
-        variant="contained"
-        color="primary"
-        style={{ background: "teal" }}
-      >
+      <Button variant="contained" color="primary">
         All Tutorials
       </Button>
     </div>
-  </div>
+  </ContentBanner>
 );
 
 const OurGoalBanner = () => (
-  <div
+  <ContentBanner
     style={{
       textAlign: "center",
       backgroundImage: "linear-gradient(teal, blue)",
-      height: bannerHeight,
       padding: "10% 0"
     }}
   >
     <h2>Our Goal</h2>
-  </div>
+  </ContentBanner>
 );
 
 const InfoBanner = () => (
-  <div
+  <ContentBanner
     style={{
       textAlign: "center",
       backgroundImage: "linear-gradient(teal, blue)",
-      height: bannerHeight,
       padding: "10% 0"
     }}
   >
     <h2>Our Goal</h2>
-  </div>
+  </ContentBanner>
 );
 
 const IndexPage = () => (
@@ -73,8 +65,6 @@ const IndexPage = () => (
     <TopBanner />
     <OurGoalBanner />
     <InfoBanner />
-    <br />
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 );
 
