@@ -4,6 +4,5 @@ import TutorialBlock from '../TutorialBlock';
 
 // Check if component renders
 it('renders', () => {
-    render(<TutorialBlock />);
+  render(<TutorialBlock />);
 });
-

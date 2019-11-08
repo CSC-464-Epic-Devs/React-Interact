@@ -3,10 +3,12 @@
 
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "prettier"
     ],
 
-    "plugins": ["react"],
+    "plugins": ["react", "prettier"],
 
     "parserOptions": {
         "ecmaFeatures": {
@@ -16,6 +18,7 @@
     },
 
     "rules": {
-        "react/jsx-uses-react": "error"
+        "react/jsx-uses-react": "error",
+        "prettier/prettier": ["error", { "singleQuote": true}]
     }
 }
