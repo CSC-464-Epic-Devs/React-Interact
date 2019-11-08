@@ -5,6 +5,8 @@ html {
 }
 body {
   margin: 0;
+  background: #000;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -619,4 +621,8 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+body{
+  color: #fff;
 }
