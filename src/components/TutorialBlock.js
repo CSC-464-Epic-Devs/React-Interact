@@ -1,10 +1,10 @@
 import React from 'react';
-import { match } from 'minimatch';
+import './styles/TutorialBlock.css';
 
 const TutorialBlock = props => {
   const { title, description } = props;
   return (
-    <div>
+    <div className="container">
       <h1>{title}</h1>
       <p>{description}</p>
       <br />
