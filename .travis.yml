@@ -9,7 +9,7 @@ node_js:
 
 script:
   # ensure these pass before merge into dev/master
-  - eslint **/*.js
+  - eslint "**/*.js"
   - npm run build
   - npm run test
 
