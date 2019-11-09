@@ -1,20 +1,19 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Image from "../components/image";
-import ContentBanner from "../components/banner";
-import Button from "@material-ui/core/Button";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Image from '../components/image';
+import ContentBanner from '../components/banner';
+import Button from '@material-ui/core/Button';
 
 const TopBanner = () => (
   <ContentBanner
     style={{
-      background: "black",
-      color: "white"
+      background: 'black',
+      color: 'white'
     }}
   >
-    <div style={{ height: "100px", float: "right" }}>
+    <div style={{ height: '100px', float: 'right' }}>
       <Image />
     </div>
     <h1>React Interact</h1>
@@ -23,7 +22,7 @@ const TopBanner = () => (
       <Button
         variant="contained"
         color="primary"
-        style={{ marginRight: "10%" }}
+        style={{ marginRight: '10%' }}
       >
         Learn ReactJS
       </Button>
@@ -38,9 +37,9 @@ const TopBanner = () => (
 const OurGoalBanner = () => (
   <ContentBanner
     style={{
-      textAlign: "center",
-      backgroundImage: "linear-gradient(teal, blue)",
-      padding: "10% 0"
+      textAlign: 'center',
+      backgroundImage: 'linear-gradient(teal, blue)',
+      padding: '10% 0'
     }}
   >
     <h2>Our Goal</h2>
@@ -61,9 +60,9 @@ const OurGoalBanner = () => (
 const InfoBanner = () => (
   <ContentBanner
     style={{
-      textAlign: "justify",
-      backgroundImage: "linear-gradient(teal, blue)",
-      padding: "10% 0"
+      textAlign: 'justify',
+      backgroundImage: 'linear-gradient(teal, blue)',
+      padding: '10% 0'
     }}
   >
     <h2>30</h2>

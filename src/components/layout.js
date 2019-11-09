@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "./header";
-import "./styles/layout.css";
+import Header from './header';
+import './styles/layout.css';
 
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import blueGrey from "@material-ui/core/colors/blueGrey";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 const theme = createMuiTheme({
   palette: {
@@ -46,8 +46,8 @@ const Layout = ({ children }) => {
           <footer>
             <div
               style={{
-                float: "left",
-                fontSize: "15px"
+                float: 'left',
+                fontSize: '15px'
               }}
             >
               Copyright © {new Date().getFullYear()},{` `}
@@ -55,8 +55,8 @@ const Layout = ({ children }) => {
             </div>
             <div
               style={{
-                textAlign: "end",
-                fontSize: "15px"
+                textAlign: 'end',
+                fontSize: '15px'
               }}
             >
               All rights reserved by &nbsp;
