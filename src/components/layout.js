@@ -10,12 +10,9 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
-import "./layout.css";
+import "./styles/layout.css";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import purple from "@material-ui/core/colors/purple";
-import green from "@material-ui/core/colors/green";
-import blue from "@material-ui/core/colors/blue";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 
 const theme = createMuiTheme({
@@ -39,12 +36,32 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div>
+        <div
+          style={{
+            margin: `0 auto`,
+            paddingTop: 0
+          }}
+        >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <div
+              style={{
+                float: "left",
+                fontSize: "15px"
+              }}
+            >
+              Copyright © {new Date().getFullYear()},{` `}
+              React Interact
+            </div>
+            <div
+              style={{
+                textAlign: "end",
+                fontSize: "15px"
+              }}
+            >
+              All rights reserved by &nbsp;
+              <a href="https://github.com/CSC-464-Regular-Devs">Regular Devs</a>
+            </div>
           </footer>
         </div>
       </ThemeProvider>

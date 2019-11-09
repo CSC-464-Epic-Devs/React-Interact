@@ -1,7 +1,7 @@
 language: node_js
 before_script:
   - npm install -g gatsby-cli
-  - npm install -g prettier
+  - npm install -g eslint
   - npm install gh-pages
   - npm install
 node_js:
@@ -9,7 +9,7 @@ node_js:
 
 script:
   # ensure these pass before merge into dev/master
-  - prettier --check "**/*.js"
+  - eslint "**/*.js"
   - npm run build
   - npm run test
 
