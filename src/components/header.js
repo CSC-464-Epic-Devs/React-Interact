@@ -1,11 +1,11 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 
 const Header = () => (
   <header
     style={{
-      background: 'black',
+      background: "black",
       marginBottom: `1.45rem`
     }}
   >
@@ -15,7 +15,7 @@ const Header = () => (
         padding: `1.45rem 1.0875rem`
       }}
     >
-      <h1 style={{ margin: 0, float: 'left' }}>
+      <h1 style={{ margin: 0, float: "left" }}>
         <Link
           to="/"
           style={{
@@ -28,9 +28,9 @@ const Header = () => (
       </h1>
       <h4
         style={{
-          textAlign: 'end',
+          textAlign: "end",
           //float:"left",
-          padding: '15px'
+          padding: "15px"
         }}
       >
         <Link
