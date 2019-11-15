@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react';
 
-import Layout from "../components/layout";
-import CodeBackground from "../components/BackgroundImages/CodeBackground";
-import FogBackground from "../components/BackgroundImages/FogBackground";
-import SEO from "../components/seo";
-import Logo from "../components/Images/logo";
-import Image from "../components/Images/image";
-import ContentBanner from "../components/banner";
-import Button from "@material-ui/core/Button";
+import Layout from '../components/layout';
+import CodeBackground from '../components/BackgroundImages/CodeBackground';
+import FogBackground from '../components/BackgroundImages/FogBackground';
+import SEO from '../components/seo';
+import Logo from '../components/Images/logo';
+//import Image from '../components/Images/image';
+import ContentBanner from '../components/banner';
+import Button from '@material-ui/core/Button';
 
 const TopBanner = () => (
   <ContentBanner>
     <div
       style={{
-        float: "right",
-        width: "15%",
-        margin: "1em"
+        float: 'right',
+        width: '15%',
+        margin: '1em'
       }}
     >
-      <Logo style={{ height: "50px", width: "25%" }} />
+      <Logo style={{ height: '50px', width: '25%' }} />
     </div>
     <h2>Regular Devs</h2>
     <div>
@@ -37,7 +37,7 @@ const OurGoalBanner = () => (
   <FogBackground>
     <ContentBanner
       style={{
-        textAlign: "center"
+        textAlign: 'center'
       }}
     >
       <h2>Our Goal</h2>
@@ -60,7 +60,7 @@ const InfoBanner = () => (
   <CodeBackground>
     <ContentBanner
       style={{
-        textAlign: "center"
+        textAlign: 'center'
       }}
     >
       <h2>30</h2>
