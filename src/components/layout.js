@@ -5,20 +5,28 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Header from './header';
-import './styles/layout.css';
+import Header from "./header";
+import "./styles/layout.css";
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import blueGrey from "@material-ui/core/colors/blueGrey";
+import secondary from "@material-ui/core/colors/indigo";
+import primary from "@material-ui/core/colors/amber";
+import headerSecondary from "@material-ui/core/colors/teal";
+import headerPrimary from "@material-ui/core/colors/common";
+
+import Typography from "@material-ui/core/Typography";
 
 const theme = createMuiTheme({
   palette: {
-    primary: blueGrey
-  }
+    primary: primary,
+    secondary: secondary
+  },
+  spacing: 1
 });
 
 const Layout = ({ children }) => {
@@ -36,18 +44,13 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            paddingTop: 0
-          }}
-        >
+        <div>
           <main>{children}</main>
           <footer>
             <div
               style={{
-                float: 'left',
-                fontSize: '15px'
+                float: "left",
+                fontSize: "15px"
               }}
             >
               Copyright © {new Date().getFullYear()},{` `}
@@ -55,8 +58,8 @@ const Layout = ({ children }) => {
             </div>
             <div
               style={{
-                textAlign: 'end',
-                fontSize: '15px'
+                textAlign: "end",
+                fontSize: "15px"
               }}
             >
               All rights reserved by &nbsp;

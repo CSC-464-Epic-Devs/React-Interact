@@ -6,6 +6,7 @@ module.exports = {
     author: `Regular Developers`
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,10 +38,10 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-background-image-es5',
+      resolve: "gatsby-background-image-es5",
       options: {
         // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:'
+        specialChars: "/:"
       }
     },
     `gatsby-plugin-styled-components`
