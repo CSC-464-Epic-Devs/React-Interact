@@ -4,15 +4,11 @@ import styled from "styled-components";
 
 function ContentBanner(props) {
   return (
-    <Box color="primary" {...props}>
+    <Box p={6} {...props}>
       {props.children}
       <span style={{ clear: "both", display: "block" }}></span>
     </Box>
   );
 }
 
-const StyledBackgroundSection = styled(ContentBanner)`
-  padding: 2em;
-`;
-
-export default StyledBackgroundSection;
+export default ContentBanner;

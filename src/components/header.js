@@ -1,55 +1,60 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import Button from "@material-ui/core/Button";
 import ContentBanner from "../components/ContentBanner";
-import SiteLogo from "../components/Images/image";
+import { makeStyles } from "@material-ui/core/styles";
 
-const Header = () => (
-  <header
-    style={{
-      background: "#333333"
-    }}
-  >
-    <div
-      style={{
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
-      }}
-    >
-      <h1 style={{ margin: 0, float: "left" }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          React Interact
-        </Link>
-      </h1>
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
 
-      <div
-        style={{
-          textAlign: "end"
-        }}
-      >
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button variant="outlined" color="secondary">
-            Home
-          </Button>
-        </Link>
-        &nbsp; &nbsp;
-        <Link to="/tutorials" style={{ textDecoration: "none" }}>
-          <Button variant="outlined" color="secondary">
-            Tutorials
-          </Button>
-        </Link>
-      </div>
-      <br />
+import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core/";
+
+export default function Header() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Grid
+            justify="space-between" // Add it here :)
+            container
+          >
+            <Grid item>
+              <Typography variant="h3" edge="start" aria-label="menu">
+                React Interact
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button
+                variant="outlined"
+                color="secondary"
+                className={classes.menuButton}
+              >
+                Home
+              </Button>
+              <Button
+                variant="outlined"
+                color="secondary"
+                className={classes.menuButton}
+              >
+                Tutorials
+              </Button>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
     </div>
-  </header>
-);
+  );
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string
@@ -58,5 +63,3 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``
 };
-
-export default Header;

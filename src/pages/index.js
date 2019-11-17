@@ -5,7 +5,6 @@ import CodeBackground from "../components/BackgroundImages/CodeBackground";
 import FogBackground from "../components/BackgroundImages/FogBackground";
 import SEO from "../components/seo";
 import Logo from "../components/Images/logo";
-//import Image from '../components/Images/image';
 import ContentBanner from "../components/ContentBanner";
 import Button from "@material-ui/core/Button";
 
@@ -19,7 +18,7 @@ const TopBanner = () => (
     >
       <Logo />
     </div>
-    <h2>Regular Devs</h2>
+    <h1>Regular Devs</h1>
     <Button variant="outlined" color="primary">
       Learn ReactJS
     </Button>
@@ -47,7 +46,6 @@ const OurGoalBanner = () => (
     >
       <div
         style={{
-          color: "black",
           border: "solid thick rgb(56,56,56)",
           borderRadius: "2em"
         }}
