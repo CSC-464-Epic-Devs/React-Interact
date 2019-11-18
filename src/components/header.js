@@ -1,8 +1,7 @@
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-import ContentBanner from "../components/ContentBanner";
-import { makeStyles } from "@material-ui/core/styles";
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core/";
+import { AppBar, Toolbar, Typography, Button, Grid } from '@material-ui/core/';
 
 export default function Header() {
   const classes = useStyles();
@@ -34,20 +33,24 @@ export default function Header() {
               </Typography>
             </Grid>
             <Grid item>
-              <Button
-                variant="outlined"
-                color="secondary"
-                className={classes.menuButton}
-              >
-                Home
-              </Button>
-              <Button
-                variant="outlined"
-                color="secondary"
-                className={classes.menuButton}
-              >
-                Tutorials
-              </Button>
+              <Link to="/" style={{ textDecoration: 'none' }}>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  className={classes.menuButton}
+                >
+                  Home
+                </Button>
+              </Link>
+              <Link to="/tutorials" style={{ textDecoration: 'none' }}>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  className={classes.menuButton}
+                >
+                  Tutorials
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </Toolbar>

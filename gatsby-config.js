@@ -6,53 +6,6 @@ module.exports = {
     author: `Regular Developers`
   },
   plugins: [
-    {
-      resolve: "gatsby-remark-code-repls",
-      options: {
-        // Optional default link text.
-        // Defaults to "REPL".
-        // eg <a href="...">Click here</a>
-        defaultText: "Click here",
-
-        // Example code links are relative to this dir.
-        // eg examples/path/to/file.js
-        directory: `${__dirname}/src/_examples/`,
-
-        // Optional link target.
-        // Note that if a target is specified, "noreferrer" will also be added.
-        // eg <a href="..." target="_blank" rel="noreferrer">...</a>
-        target: "_blank",
-
-        // Provider specific options
-        codepen: {
-          // Optional HTML contents to inject into REPL.
-          // Defaults to `<div id="root"></div>`.
-          // eg '<div id="root"></div>'
-          html: "",
-
-          // Optional externals to load from a CDN.
-          // eg '//unpkg.com/react/umd/react.development.js'
-          externals: [],
-
-          // Include CSS with matching name.
-          // If set to `true`, when specifying `file1.js` as example file,
-          // it will try to inject the CSS in `file1.css` if the file exists,
-          // otherwise the default behaviour is preserved
-          includeMatchingCSS: false
-        },
-
-        codesandbox: {
-          // Optional HTML contents to inject into REPL.
-          // Defaults to `<div id="root"></div>`.
-          // eg '<div id="root"></div>'
-          html: "",
-
-          // Optional runtime dependencies to load from NPM.
-          // eg ['react', 'react-dom'] or ['react@15', 'react-dom@15']
-          dependencies: []
-        }
-      }
-    },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
@@ -67,13 +20,6 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/_examples`
       }
     },
     `gatsby-plugin-mdx`,
@@ -92,10 +38,10 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-background-image-es5",
+      resolve: 'gatsby-background-image-es5',
       options: {
         // add your own characters to escape, replacing the default ':/'
-        specialChars: "/:"
+        specialChars: '/:'
       }
     },
     `gatsby-plugin-styled-components`,

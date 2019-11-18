@@ -1,10 +1,9 @@
 import React from 'react';
-import './styles/TutorialBlock.css';
 
 const TutorialBlock = props => {
   const { title, description } = props;
   return (
-    <div className="container">
+    <div style={{ width: '100%', height: '400' }}>
       <h1>{title}</h1>
       <p>{description}</p>
       <br />
