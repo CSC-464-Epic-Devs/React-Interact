@@ -1,62 +1,63 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Header = () => (
-  <header
-    style={{
-      background: 'black',
-      marginBottom: `1.45rem`
-    }}
-  >
-    <div
-      style={{
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
-      }}
-    >
-      <h1 style={{ margin: 0, float: 'left' }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          React Interact
-        </Link>
-      </h1>
-      <h4
-        style={{
-          textAlign: 'end',
-          //float:"left",
-          padding: '15px'
-        }}
-      >
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          Home
-        </Link>
-        &nbsp; &nbsp;
-        <Link
-          to="/tutorials"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          Tutorials
-        </Link>
-      </h4>
-      <br />
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
+
+import { AppBar, Toolbar, Typography, Button, Grid } from '@material-ui/core/';
+
+export default function Header() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Grid
+            justify="space-between" // Add it here :)
+            container
+          >
+            <Grid item>
+              <Typography variant="h3" edge="start" aria-label="menu">
+                React Interact
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Link to="/" style={{ textDecoration: 'none' }}>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  className={classes.menuButton}
+                >
+                  Home
+                </Button>
+              </Link>
+              <Link to="/tutorials" style={{ textDecoration: 'none' }}>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  className={classes.menuButton}
+                >
+                  Tutorials
+                </Button>
+              </Link>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
     </div>
-  </header>
-);
+  );
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string
@@ -65,5 +66,3 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``
 };
-
-export default Header;
