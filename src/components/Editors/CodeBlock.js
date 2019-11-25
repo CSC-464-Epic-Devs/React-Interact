@@ -4,6 +4,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { mdx } from "@mdx-js/react";
 
 import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
 
 export default ({ children, className, live, render }) => {
   const language = className.replace(/language-/, "");
@@ -12,10 +13,7 @@ export default ({ children, className, live, render }) => {
     return (
       <div
         style={{
-          marginTop: "40px",
-          display: "flex",
-          alignItems: "stretch",
-          flexDirection: "column"
+          marginTop: "40px"
         }}
       >
         <LiveProvider
@@ -23,22 +21,9 @@ export default ({ children, className, live, render }) => {
           transformCode={code => "/** @jsx mdx */" + code}
           scope={{ mdx }}
         >
-          <Paper
-            style={{
-              backgroundColor: "black",
-              display: "flex",
-              fextDirection: "row",
-              flexGrow: 1
-            }}
-          >
-            <LiveEditor style={{ flexGrow: 1 }} />
-            <LivePreview style={{ flexGrow: 1 }} />
-          </Paper>
-          <Paper
-            style={{ flexGrow: 1, backgroundColor: "#ffc", color: "black" }}
-          >
-            <LiveError />
-          </Paper>
+          <LiveEditor />
+          <LivePreview />
+          <LiveError />
         </LiveProvider>
       </div>
     );
