@@ -1,20 +1,21 @@
-import React from "react";
-import Box from "@material-ui/core/Box";
+import React from 'react';
+import Box from '@material-ui/core/Box';
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import CodeBlock from "components/Editors/CodeBlock";
-import { MDXProvider } from "@mdx-js/react";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import CodeBlock from 'components/Editors/CodeBlock';
+import { MDXProvider } from '@mdx-js/react';
 
-const primary = "#3f51b5";
-const secondary = "#76ff03";
+const primary = '#3f51b5';
+const secondary = '#76ff03';
 
+/* eslint-disable */
 const components = {
   pre: props => <div {...props} />,
   code: CodeBlock
 };
+/* eslint-enable */
 
 const theme = createMuiTheme({
   palette: {
@@ -23,8 +24,8 @@ const theme = createMuiTheme({
       main: secondary
     },
     text: {
-      primary: "#fff",
-      secondary: "#000000"
+      primary: '#fff',
+      secondary: '#000000'
     }
   },
   spacing: 2
@@ -35,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   paper: { background: "rgb(72,72,72)" }
 }));
 
-function ContentBanner(props) {
+export default function ContentBanner(props) {
   return (
     <MDXProvider components={components}>
       <>
@@ -49,5 +50,3 @@ function ContentBanner(props) {
     </MDXProvider>
   );
 }
-
-export default ContentBanner;

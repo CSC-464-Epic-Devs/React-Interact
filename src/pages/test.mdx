@@ -6,30 +6,11 @@ import Content from "components/layouts/react_content";
 # Hello World!
 
 ```react live=true
-class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { seconds: 0 };
-  }
-
-  tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
-    }));
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
+class HelloMessage extends React.Component {
   render() {
     return (
       <div>
-        Seconds: {this.state.seconds}
+        Hello {this.props.name}
       </div>
     );
   }

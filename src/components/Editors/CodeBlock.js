@@ -1,37 +1,75 @@
-import React from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import { mdx } from "@mdx-js/react";
+import React from 'react';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { mdx } from '@mdx-js/react';
 
-import Paper from "@material-ui/core/Paper";
-import Box from "@material-ui/core/Box";
+import Paper from '@material-ui/core/Paper';
 
-export default ({ children, className, live, render }) => {
-  const language = className.replace(/language-/, "");
+const ReactLiveEditor = ({ children, className, live, render }) => {
+  const language = className.replace(/language-/, '');
 
   if (live) {
     return (
-      <div
+      <Paper
         style={{
-          marginTop: "40px"
+          backgroundColor: 'black',
+          marginTop: '40px',
+          display: 'flex',
+          alignItems: 'stretch',
+          flexDirection: 'column'
         }}
       >
         <LiveProvider
           code={children.trim()}
-          transformCode={code => "/** @jsx mdx */" + code}
+          transformCode={code => '/** @jsx mdx */' + code}
           scope={{ mdx }}
         >
-          <LiveEditor />
-          <LivePreview />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'stretch'
+            }}
+          >
+            <div style={{ width: '100%' }}>
+              <h2
+                style={{
+                  backgroundColor: 'gray',
+                  borderTopLeftRadius: '.1em'
+                }}
+              >
+                Editor
+              </h2>
+              <LiveEditor />
+            </div>
+            <div
+              style={{
+                width: '100%',
+                backgroundColor: 'white',
+                color: 'black'
+              }}
+            >
+              <h2
+                style={{
+                  backgroundColor: 'gray',
+                  borderTopRightRadius: '.1em',
+                  color: 'white'
+                }}
+              >
+                Preview
+              </h2>
+              <LivePreview />
+            </div>
+          </div>
           <LiveError />
         </LiveProvider>
-      </div>
+      </Paper>
     );
   }
 
   if (render) {
     return (
-      <div style={{ marginTop: "40px" }}>
+      <div style={{ marginTop: '40px' }}>
         <LiveProvider code={children}>
           <LivePreview />
         </LiveProvider>
@@ -42,7 +80,7 @@ export default ({ children, className, live, render }) => {
   return (
     <Highlight {...defaultProps} code={children.trim()} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: "20px" }}>
+        <pre className={className} style={{ ...style, padding: '20px' }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -55,3 +93,5 @@ export default ({ children, className, live, render }) => {
     </Highlight>
   );
 };
+
+export default ReactLiveEditor;
