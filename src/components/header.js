@@ -1,7 +1,7 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-import { AppBar, Toolbar, Typography, Button, Grid } from '@material-ui/core/';
+import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core/";
 
 export default function Header() {
   const classes = useStyles();
@@ -32,8 +32,8 @@ export default function Header() {
                 React Interact
               </Typography>
             </Grid>
-            <Grid item>
-              <Link to="/" style={{ textDecoration: 'none' }}>
+            <Grid item style={{ margin: "auto 0" }}>
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <Button
                   variant="outlined"
                   color="secondary"
@@ -42,7 +42,7 @@ export default function Header() {
                   Home
                 </Button>
               </Link>
-              <Link to="/tutorials" style={{ textDecoration: 'none' }}>
+              <Link to="/tutorials" style={{ textDecoration: "none" }}>
                 <Button
                   variant="outlined"
                   color="secondary"
@@ -58,11 +58,3 @@ export default function Header() {
     </div>
   );
 }
-
-Header.propTypes = {
-  siteTitle: PropTypes.string
-};
-
-Header.defaultProps = {
-  siteTitle: ``
-};

@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import TutorialBlock from '../components/TutorialBlock';
+import ContentBanner from 'components/ContentBanner';
 
 const data = [
   {
@@ -30,25 +31,27 @@ const data = [
 const Tutorials = () => (
   <Layout>
     <SEO title="Tutorials" />
-    <h1
-      style={{
-        fontSize: 100,
-        textAlign: 'center'
-      }}
-    >
-      Tutorials
-    </h1>
-    <br />
-    <br />
-    {data.map(module => (
-      <TutorialBlock
-        key={module.title}
-        title={module.title}
-        description={module.description}
-      />
-    ))}
-    <br />
-    <br />
+    <ContentBanner>
+      <h1
+        style={{
+          fontSize: 100,
+          textAlign: 'center'
+        }}
+      >
+        Tutorials
+      </h1>
+      <br />
+      <br />
+      {data.map(module => (
+        <TutorialBlock
+          key={module.title}
+          title={module.title}
+          description={module.description}
+        />
+      ))}
+      <br />
+      <br />
+    </ContentBanner>
   </Layout>
 );
 

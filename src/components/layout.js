@@ -5,22 +5,22 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Header from './header';
-import './styles/layout.css';
+import Header from "./header";
+import "./styles/layout.css";
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
-const primary = '#2196f3';
-const secondary = '#76ff03';
+const primary = "#004d84";
+const secondary = "#05a68e";
 
-import Paper from '@material-ui/core/Paper';
+import Paper from "@material-ui/core/Paper";
 
 const theme = createMuiTheme({
   palette: {
@@ -29,8 +29,8 @@ const theme = createMuiTheme({
       main: secondary
     },
     text: {
-      primary: '#F5F5F5',
-      secondary: '#000000'
+      primary: "#fff",
+      secondary: "#000000"
     }
   },
   spacing: 2
@@ -42,45 +42,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Layout({ children }) {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
   const classes = useStyles(theme);
   return (
     <>
       <ThemeProvider theme={theme}>
         <Container>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header />
           <div>
             <Paper className={classes.paper}>{children}</Paper>
-            <footer>
-              <div
-                style={{
-                  float: "left",
-                  fontSize: "15px"
-                }}
-              >
-                Copyright © {new Date().getFullYear()},{` `}
-                React Interact
-              </div>
-              <div
-                style={{
-                  textAlign: "end",
-                  fontSize: "15px"
-                }}
-              >
-                All rights reserved by &nbsp;
-                <a href="https://github.com/CSC-464-Regular-Devs">
-                  Regular Devs
-                </a>
-              </div>
-            </footer>
           </div>
         </Container>
       </ThemeProvider>
