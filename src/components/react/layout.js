@@ -5,21 +5,21 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "../header";
+import Header from '../header';
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
-const primary = "#FFD700";
-const secondary = "#76ff03";
+const primary = '#FFD700';
+const secondary = '#76ff03';
 
-import Paper from "@material-ui/core/Paper";
+import Paper from '@material-ui/core/Paper';
 
 const theme = createMuiTheme({
   palette: {
@@ -28,8 +28,8 @@ const theme = createMuiTheme({
       main: secondary
     },
     text: {
-      primary: "#F5F5F5",
-      secondary: "#000000"
+      primary: '#F5F5F5',
+      secondary: '#000000'
     }
   },
   spacing: 2

@@ -1,8 +1,8 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/react/layout";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/react/layout';
 
-export default ({ data }) => {
+const ReactTemplate = ({ data }) => {
   const post = data.mdx;
   return (
     <Layout>
@@ -25,3 +25,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default ReactTemplate;
