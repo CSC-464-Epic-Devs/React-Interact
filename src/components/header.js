@@ -32,7 +32,7 @@ export default function Header() {
                 React Interact
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid item style={{ margin: 'auto 0' }}>
               <Link to="/" style={{ textDecoration: 'none' }}>
                 <Button
                   variant="outlined"

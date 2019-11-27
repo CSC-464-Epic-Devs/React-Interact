@@ -17,8 +17,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-const primary = '#2196f3';
-const secondary = '#76ff03';
+const primary = '#004d84';
+const secondary = '#05a68e';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -29,7 +29,7 @@ const theme = createMuiTheme({
       main: secondary
     },
     text: {
-      primary: '#F5F5F5',
+      primary: '#fff',
       secondary: '#000000'
     }
   },
@@ -59,28 +59,6 @@ export default function Layout({ children }) {
           <Header siteTitle={data.site.siteMetadata.title} />
           <div>
             <Paper className={classes.paper}>{children}</Paper>
-            <footer>
-              <div
-                style={{
-                  float: "left",
-                  fontSize: "15px"
-                }}
-              >
-                Copyright © {new Date().getFullYear()},{` `}
-                React Interact
-              </div>
-              <div
-                style={{
-                  textAlign: "end",
-                  fontSize: "15px"
-                }}
-              >
-                All rights reserved by &nbsp;
-                <a href="https://github.com/CSC-464-Regular-Devs">
-                  Regular Devs
-                </a>
-              </div>
-            </footer>
           </div>
         </Container>
       </ThemeProvider>

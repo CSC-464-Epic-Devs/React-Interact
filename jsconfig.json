@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "templates/*": ["src/templates/*"]
+    }
+  },
+  "exclude": ["node_modules", "public", ".cache"]
+}

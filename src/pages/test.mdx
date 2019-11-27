@@ -1,11 +1,20 @@
-import ContentBanner from "../components/ContentBanner";
+import Content from "components/layouts/react_content";
+
+
+<Content>
 
 # Hello World!
 
-hi
+```react live=true
+class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name}
+      </div>
+    );
+  }
+}
+```
 
-<ContentBanner style={{ background: "purple" }}>some content yo</ContentBanner>
-
-<pre class="language-javascript">
-  <code>{"<div>Hello!</div>"}</code>
-</pre>
+</Content>
