@@ -1,5 +1,5 @@
 ---
-title: Hello, world!
+title: Im the title
 date: 2019-01-29
 theme: react
 ---
@@ -8,10 +8,14 @@ import ContentBanner from "../../../components/ContentBanner";
 
 # Hello World!
 
-React 1
-
-<ContentBanner style={{ background: "purple" }}>some content yo</ContentBanner>
-
-```html
-<p>hi</p>
+```react live=true
+class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name}
+      </div>
+    );
+  }
+}
 ```
