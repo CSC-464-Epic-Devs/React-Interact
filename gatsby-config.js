@@ -22,6 +22,13 @@ module.exports = {
         path: `${__dirname}/src/pages/`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/MDX/`
+      }
+    },
     `gatsby-plugin-mdx`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -38,10 +45,10 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-background-image-es5',
+      resolve: "gatsby-background-image-es5",
       options: {
         // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:'
+        specialChars: "/:"
       }
     },
     `gatsby-plugin-styled-components`,
