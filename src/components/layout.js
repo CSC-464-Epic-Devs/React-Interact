@@ -7,7 +7,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import './styles/layout.css';
@@ -42,21 +41,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Layout({ children }) {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
   const classes = useStyles(theme);
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <Container>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header />
           <div>
             <Paper className={classes.paper}>{children}</Paper>
           </div>
