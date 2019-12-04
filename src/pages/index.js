@@ -1,13 +1,17 @@
 import React from 'react';
 
-import Layout from '../components/layout';
-import CodeBackground from '../components/BackgroundImages/CodeBackground';
-import FogBackground from '../components/BackgroundImages/FogBackground';
-import SEO from '../components/seo';
-import Logo from '../components/Images/logo';
-import ContentBanner from '../components/ContentBanner';
+import Layout from 'components/layout';
+import CodeBackground from 'components/BackgroundImages/CodeBackground';
+import FogBackground from 'components/BackgroundImages/FogBackground';
+import BlurBackground from 'components/BackgroundImages/BlurBackground';
+import Dustin from 'components/Images/Dustin';
+import Adesh from 'components/Images/Adesh';
+import Yuki from 'components/Images/Yuki';
+import SEO from 'components/seo';
+import Logo from 'components/Images/logo';
+import ContentBanner from 'components/ContentBanner';
 import Button from '@material-ui/core/Button';
-
+import styled from 'styled-components';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const main = '#03a9f4';
@@ -47,7 +51,7 @@ const TopBanner = () => (
 );
 
 const OurGoalBanner = () => (
-  <FogBackground>
+  <BlurBackground>
     <ContentBanner
       style={{
         textAlign: 'center'
@@ -75,7 +79,7 @@ const OurGoalBanner = () => (
         </p>
       </div>
     </ContentBanner>
-  </FogBackground>
+  </BlurBackground>
 );
 
 const InfoBanner = () => (
@@ -85,9 +89,66 @@ const InfoBanner = () => (
         textAlign: 'center'
       }}
     >
-      <h2>30</h2>
-      <h2>60</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+        <div>
+          <h2>X</h2>
+          <p>Tutorials Available</p>
+        </div>
+        <div>
+          <h2>Y</h2>
+          <p>Projects and Examlpes</p>
+        </div>
+        <div>
+          <h2>Z</h2>
+          <p>Frameworks</p>
+        </div>
+      </div>
     </ContentBanner>
+  </CodeBackground>
+);
+
+const TeamPictures = () => (
+  <CodeBackground>
+    <FogBackground>
+      <div
+        style={{
+          textAlign: 'center',
+          color: '#000000'
+        }}
+      >
+        <h2
+          style={{
+            textAlign: 'center'
+          }}
+        >
+          Our Team
+        </h2>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            flexWrap: 'wrap'
+          }}
+        >
+          <div>
+            <Dustin style={{ width: '200px', borderRadius: '50%' }} />
+            <p>Dustin (Dev Ops)</p>
+          </div>
+          <div>
+            <Yuki style={{ width: '200px', borderRadius: '50%' }} />
+            <p>Youki (Team Lead)</p>
+          </div>
+          <div>
+            <Logo style={{ width: '200px', borderRadius: '50%' }} />
+            <p>Mengesh (UX Design)</p>
+          </div>
+          <div>
+            <Adesh style={{ width: '200px', borderRadius: '50%' }} />
+            <p>Dustin (Developer)</p>
+          </div>
+        </div>
+      </div>
+    </FogBackground>
   </CodeBackground>
 );
 
@@ -97,6 +158,7 @@ const IndexPage = () => (
     <TopBanner />
     <OurGoalBanner />
     <InfoBanner />
+    <TeamPictures />
   </Layout>
 );
 
