@@ -1,20 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import Layout from 'components/layout';
-import CodeBackground from 'components/BackgroundImages/CodeBackground';
-import FogBackground from 'components/BackgroundImages/FogBackground';
-import BlurBackground from 'components/BackgroundImages/BlurBackground';
-import Dustin from 'components/Images/Dustin';
-import Adesh from 'components/Images/Adesh';
-import Yuki from 'components/Images/Yuki';
-import SEO from 'components/seo';
-import Logo from 'components/Images/logo';
-import ContentBanner from 'components/ContentBanner';
-import Button from '@material-ui/core/Button';
-import styled from 'styled-components';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Layout from "components/layout";
+import CodeBackground from "components/BackgroundImages/CodeBackground";
+import FogBackground from "components/BackgroundImages/FogBackground";
+import BlurBackground from "components/BackgroundImages/BlurBackground";
+import Dustin from "components/Images/Dustin";
+import Adesh from "components/Images/Adesh";
+import Yuki from "components/Images/Yuki";
+import Mengesh from "components/Images/Mengesh";
+import SEO from "components/seo";
+import Logo from "components/Images/logo";
+import ContentBanner from "components/ContentBanner";
+import Button from "@material-ui/core/Button";
+import styled from "styled-components";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const main = '#03a9f4';
+const main = "#03a9f4";
 
 const theme = createMuiTheme({
   palette: {
@@ -29,8 +30,8 @@ const TopBanner = () => (
   <ContentBanner>
     <div
       style={{
-        float: 'right',
-        width: '200px'
+        float: "right",
+        width: "200px"
       }}
     >
       <Logo />
@@ -41,7 +42,7 @@ const TopBanner = () => (
         Learn ReactJS
       </Button>
       <div
-        style={{ width: '5px', height: 'auto', display: 'inline-block' }}
+        style={{ width: "5px", height: "auto", display: "inline-block" }}
       ></div>
       <Button variant="outlined" color="primary">
         All Tutorials
@@ -54,15 +55,15 @@ const OurGoalBanner = () => (
   <BlurBackground>
     <ContentBanner
       style={{
-        textAlign: 'center'
+        textAlign: "center"
       }}
     >
       <div
         style={{
-          border: 'solid thick rgb(56,56,56)',
-          borderRadius: '1em',
-          padding: '1em',
-          color: 'black'
+          border: "solid thick rgb(56,56,56)",
+          borderRadius: "1em",
+          padding: "1em",
+          color: "black"
         }}
       >
         <h2>Our Goal</h2>
@@ -86,10 +87,17 @@ const InfoBanner = () => (
   <CodeBackground>
     <ContentBanner
       style={{
-        textAlign: 'center'
+        textAlign: "center",
+        height: "400px"
       }}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          paddingTop: "125px"
+        }}
+      >
         <div>
           <h2>X</h2>
           <p>Tutorials Available</p>
@@ -112,38 +120,46 @@ const TeamPictures = () => (
     <FogBackground>
       <div
         style={{
-          textAlign: 'center',
-          color: '#000000'
+          textAlign: "center",
+          color: "#000000"
         }}
       >
         <h2
           style={{
-            textAlign: 'center'
+            textAlign: "center"
           }}
         >
           Our Team
         </h2>
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'space-evenly',
-            flexWrap: 'wrap'
+            display: "flex",
+            justifyContent: "space-evenly",
+            flexWrap: "wrap"
           }}
         >
           <div>
-            <Dustin style={{ width: '200px', borderRadius: '50%' }} />
+            <Dustin
+              style={{ width: "200px", height: "250px", borderRadius: "50%" }}
+            />
             <p>Dustin (Dev Ops)</p>
           </div>
           <div>
-            <Yuki style={{ width: '200px', borderRadius: '50%' }} />
+            <Yuki
+              style={{ width: "200px", height: "250px", borderRadius: "50%" }}
+            />
             <p>Youki (Team Lead)</p>
           </div>
           <div>
-            <Logo style={{ width: '200px', borderRadius: '50%' }} />
+            <Mengesh
+              style={{ width: "200px", height: "250px", borderRadius: "50%" }}
+            />
             <p>Mengesh (UX Design)</p>
           </div>
           <div>
-            <Adesh style={{ width: '200px', borderRadius: '50%' }} />
+            <Adesh
+              style={{ width: "200px", height: "250px", borderRadius: "50%" }}
+            />
             <p>Dustin (Developer)</p>
           </div>
         </div>
