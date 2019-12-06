@@ -28,7 +28,9 @@ export default function Header() {
           >
             <Grid item>
               <Typography variant="h3" edge="start" aria-label="menu">
-                React Interact
+                <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
+                  React Interact
+                </Link>
               </Typography>
             </Grid>
             <Grid item style={{ margin: 'auto 0' }}>
