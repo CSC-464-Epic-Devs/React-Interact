@@ -511,6 +511,7 @@ th {
   font-weight: bold;
 }
 li {
+  text-decoration: none;
   margin-bottom: calc(1.45rem / 2);
 }
 ol li {
@@ -625,4 +626,14 @@ pre tt:after {
 
 body {
   color: #fff;
+}
+
+link{
+  color: #fff;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: white
 }
