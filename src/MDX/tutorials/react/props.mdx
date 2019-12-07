@@ -1,0 +1,64 @@
+---
+title: React Home
+date: 2019-12-06
+theme: react
+---
+
+# Props
+
+Props stand for "Properties." They are read-only components. 
+It is an object which stores the value of attributes of a tag 
+and work similar to the HTML attributes. It gives a way to pass data 
+from one component to other components. It is similar to function arguments. 
+Props are passed to the component in the same way as arguments passed in a function.
+
+Props are immutable so we cannot modify the props from inside the component. 
+Inside the components, we can add attributes called props.
+These attributes are available in the component 
+as this.props and can be used to render dynamic data in our render method.
+
+When you need immutable data in the component, you have to add props to reactDom.render() 
+method in the main.js file of your ReactJS project and used it inside the component 
+in which you need. It can be explained in the below example.
+
+### Example 
+
+```js
+const myelement = <Car brand="Ford" />;
+```
+
+The component receives the argument as a props object:
+
+```js
+class Car extends React.Component {
+  render() {
+    return <h2>I am a {this.props.brand}!</h1>;
+  }
+}
+```
+
+# Pass Data 
+
+Props are also how you pass data from one component to another, as parameters.
+
+
+```React live=true
+class Roommate extends React.Component {
+ constructor(props) {
+    super(props);
+    this.state = { Roommate : "Dustin Cook" };
+ }
+
+
+  render() {
+    return (
+        <>
+        <h1>Who lives in my house apart from me?</h1>
+        <h2>{this.state.Roommate}!</h2>
+        </>
+    );
+
+  }
+};
+```
+
