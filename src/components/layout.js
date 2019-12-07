@@ -14,10 +14,9 @@ import './styles/layout.css';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 
-const primary = '#004d84';
-const secondary = '#05a68e';
+const primary = '#202020';
+const secondary = '#00ff99';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -37,7 +36,7 @@ const theme = createMuiTheme({
 
 /* eslint-disable */
 const useStyles = makeStyles(theme => ({
-  paper: { background: "rgb(72,72,72)" }
+  paper: { background: "#303030" }
 }));
 
 export default function Layout({ children }) {
@@ -46,12 +45,10 @@ export default function Layout({ children }) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Container>
           <Header />
           <div>
             <Paper className={classes.paper}>{children}</Paper>
           </div>
-        </Container>
       </ThemeProvider>
     </>
   );
