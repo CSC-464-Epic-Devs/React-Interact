@@ -1,3 +1,6 @@
-.conatiner {
-    background-color: lightblue;
+.container {
+    background-color: #FF3333;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
 }

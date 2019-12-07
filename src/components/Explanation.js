@@ -6,8 +6,8 @@ const Explanation = props => {
 
   return (
     <div className={styles.container}>
-      <h1>{header}</h1>
-      <text>{children}</text>
+      <h4>{header}</h4>
+      {children}
     </div>
   );
 };
