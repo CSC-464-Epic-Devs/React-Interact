@@ -7,7 +7,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { graphql } from 'gatsby';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-//import Container from '@material-ui/core/Container';
 import CodeBlock from 'components/Editors/CodeBlock';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
