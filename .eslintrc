@@ -3,6 +3,7 @@
 
   "extends": [
     "eslint:recommended",
+    "plugin:mdx/recommended",
     "plugin:react/recommended",
   ],
 
