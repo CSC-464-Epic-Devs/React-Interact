@@ -1,0 +1,131 @@
+---
+title: Components
+Date: 2019-06-29
+theme: React
+---
+
+
+# Components
+
+Components are independent and reusable bits of code. 
+They serve the same purpose as JavaScript functions, 
+but work in isolation and returns HTML via a render function.
+
+Conceptually, components are like JavaScript functions. 
+They accept arbitrary inputs (called “props”) and 
+return React elements describing what should appear on the screen.
+
+#### In ReactJS, we have mainly two types of components. They are :
+
+# Functional Components
+
+In React, function components are a way to write components 
+that only contain a render method and don't have their own state. 
+They are simply JavaScript functions that may or may not receive data as parameters. 
+We can create a function that takes props(properties) as input and returns 
+what should be rendered. 
+A valid functional component can be shown in the below example.
+
+```React
+    function WelcomeMessage(props) {  
+      return <h1>Welcome to the , {props.name}</h1>;  
+    }  
+```
+
+# Class Components
+Class components are more complex than functional components. 
+It requires you to extend from React. Component and create a render 
+function which returns a React element. You can pass data from one class 
+to other class components. You can create a class by defining a class that 
+extends Component and has a render function. Valid class component is shown 
+in the below example.
+
+```React
+    class MyComponent extends React.Component {  
+      render() {  
+        return (  
+          <div>This is main component.</div>  
+        );  
+      }  
+    }  
+```
+# Rendering a Component 
+
+elements can also represent user-defined components:
+
+```React
+const element = <Welcome name="Sara" />;
+```
+When React sees an element representing a user-defined component, 
+it passes JSX attributes to this component as a single object. We call this object “props”.
+
+For example, this code renders “Hello, Sara” on the page:
+
+```React
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+const element = <Welcome name="Sara" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
+# Composing Components 
+
+Components can refer to other components in their output. 
+This lets us use the same component abstraction for any level of detail.
+A button, a form, a dialog, a screen: in React apps, 
+all those are commonly expressed as components.
+
+For example, we can create an App component that renders Welcome many times:
+
+```react
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+);
+```
+
+# Component Constructor
+
+If there is a constructor() function in your component, 
+this function will be called when the component gets initiated.
+
+The constructor function is where you initiate the component's properties.
+
+In React, component properties should be kept in an object called state.
+
+You will learn more about state later in this tutorial.
+
+The constructor function is also where you honor the inheritance of the parent 
+component by including the super() statement, 
+which executes the parent component's constructor function, 
+and your component has access to all the functions 
+of the parent component (React.Component).
+
+```React live = true
+class Shirt extends React.Component {
+  constructor() {
+    super();
+    this.state = { color: "blue" };
+  }
+  render() {
+    return <h2>Thank you for buying {this.state.color}  Shirt!</h2>;
+  }
+  
+}
+```
