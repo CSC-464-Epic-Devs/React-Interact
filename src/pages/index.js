@@ -37,15 +37,19 @@ const TopBanner = () => (
         </div>
         <h1>Regular Devs</h1>
         <ThemeProvider theme={theme}>
+            <a href="../tutorials/react">
             <Button variant="outlined" color="primary">
         Learn ReactJS
             </Button>
+            </a>
             <div
                 style={{ width: '5px', height: 'auto', display: 'inline-block' }}
             ></div>
+            <a href="../tutorials">
             <Button variant="outlined" color="primary">
         All Tutorials
             </Button>
+            </a>
         </ThemeProvider>
     </ContentBanner>
 );

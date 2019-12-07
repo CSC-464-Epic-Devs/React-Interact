@@ -7,14 +7,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { graphql } from 'gatsby';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import CodeBlock from 'components/Editors/CodeBlock';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Paper from '@material-ui/core/Paper';
 
-const primary = '#190c43';
-const secondary = '#430c36';
+const primary = '#202020';
+const secondary = '#00ff99';
 
 const theme = createMuiTheme({
     palette: {
@@ -27,12 +26,12 @@ const theme = createMuiTheme({
             secondary: '#000000'
         }
     },
-    spacing: 2
+    spacing: 5
 });
 
 /* eslint-disable */
 const useStyles = makeStyles(theme => ({
-  paper: { background: secondary }
+  paper: { background: '#303030' }
 }));
 
 /* eslint-disable */
@@ -48,7 +47,6 @@ const ReactTemplate = ({ data }) => {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <Container>
                     <Header />
                     <div>
                         <Paper className={classes.paper}>
@@ -57,7 +55,6 @@ const ReactTemplate = ({ data }) => {
                             </MDXProvider>
                         </Paper>
                     </div>
-                </Container>
             </ThemeProvider>
         </>
     );
