@@ -13,8 +13,8 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Paper from '@material-ui/core/Paper';
 
-const primary = '#190c43';
-const secondary = '#430c36';
+const primary = '#00004d';
+const secondary = '#05a68e';
 
 const theme = createMuiTheme({
   palette: {
@@ -32,7 +32,7 @@ const theme = createMuiTheme({
 
 /* eslint-disable */
 const useStyles = makeStyles(theme => ({
-  paper: { background: secondary }
+  paper: { background: "#202020" }
 }));
 
 /* eslint-disable */
