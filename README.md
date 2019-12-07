@@ -4,7 +4,7 @@ React Interact is a tutorial website to ease the burdon of learning React and ot
 
 ## Using the site
 
-The site is broken down into categories such as React, HTML, CSS, JS, and these categories are broken in modules.
+The site is broken down into categories such as React, HTML, CSS, JS, and these categories are broken in modules. The user is free to follow the modules linearly or browes the topics that peek their interest.
 
 ## Contributing
 
