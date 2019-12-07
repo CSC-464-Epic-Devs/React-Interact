@@ -2,6 +2,7 @@
 title: JSX
 theme: default
 ---
+import TestComp from '../../../components/TestComp.js';
 
 # JSX
 
@@ -10,7 +11,7 @@ theme: default
 const snippet = <h1>Example<h1>
 ```
 
-This is JSX, a syntax extension to JavaScript. It helps us define the UI for React Components.
+This is JSX, a syntax extension to JavaScript. It helps us define the UI for React Components.  
 
 Using this syntax, lets create some React code!!!
 
@@ -18,16 +19,29 @@ Try to edit this code:
 ```js live=true
 function Example() {
     const sampleHeader = <h1>Edit Me</h1>;
-
     return <div>{sampleHeader}</div>
 }
+```  
+
+### What is going on here?
+```js
+function Example() {...}
 ```
+This is a React functional component. For now we can think of this as a way to create a UI block.
+```js
+const sampleHeader = <h1>Edit Me</h1>;
+return <div>{sampleHeader}</div>
+```
+In this snippet, we are storing the heading *Edit Me* in a variable called **sampleHeader**.
+The return statement takes **sampleHeader** and places it in the div block.
 
-import NoteBlock from '../../../components/NoteBlock.js'
-
-<NoteBlock header="What's going on here?">
-    <div>
-        <text>Sample Text</text>
-    </div>
-</NoteBlock>
-
+This is equivalent to:
+```js live=true
+function Example() {
+    return (
+        <div>
+            <h1>Edit Me</h1>
+        </div>
+    );
+}
+```
