@@ -1,10 +1,10 @@
 /*
-<FogBackground>
+<CodeBackground>
   <div style={{height: "500px"}}>
     <h2>30</h2>
     <h2>60</h2>
   </div>
-</FogBackground>
+</CodeBackground>
 */
 
 import React from 'react';
@@ -17,7 +17,7 @@ const BackgroundSection = props => (
     <StaticQuery
         query={graphql`
       query {
-        desktop: file(relativePath: { eq: "Fog.jpg" }) {
+        desktop: file(relativePath: { eq: "css.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp

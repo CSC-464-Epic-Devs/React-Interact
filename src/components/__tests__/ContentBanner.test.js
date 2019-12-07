@@ -4,5 +4,5 @@ import ContentBanner from '../ContentBanner';
 
 // Check if component renders
 it('renders', () => {
-  render(<ContentBanner />);
+    render(<ContentBanner />);
 });

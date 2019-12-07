@@ -6,92 +6,92 @@ import { mdx } from '@mdx-js/react';
 import Paper from '@material-ui/core/Paper';
 
 const ReactLiveEditor = ({ children, className, live, render }) => {
-  const language = className.replace(/language-/, '');
+    const language = className.replace(/language-/, '');
 
-  if (live) {
-    return (
-      <Paper
-        style={{
-          backgroundColor: 'black',
-          marginTop: '40px',
-          display: 'flex',
-          alignItems: 'stretch',
-          flexDirection: 'column'
-        }}
-      >
-        <LiveProvider
-          code={children.trim()}
-          transformCode={code => '/** @jsx mdx */' + code}
-          scope={{ mdx }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'stretch'
-            }}
-          >
-            <div style={{ width: '100%' }}>
-              <h2
+    if (live) {
+        return (
+            <Paper
                 style={{
-                  backgroundColor: 'gray',
-                  borderTopLeftRadius: '.1em'
+                    backgroundColor: 'black',
+                    marginTop: '40px',
+                    display: 'flex',
+                    alignItems: 'stretch',
+                    flexDirection: 'column'
                 }}
-              >
-                Editor
-              </h2>
-              <LiveEditor />
-            </div>
-            <div
-              style={{
-                width: '100%',
-                backgroundColor: 'white',
-                color: 'black'
-              }}
             >
-              <h2
-                style={{
-                  backgroundColor: 'gray',
-                  borderTopRightRadius: '.1em',
-                  color: 'white'
-                }}
-              >
+                <LiveProvider
+                    code={children.trim()}
+                    transformCode={code => '/** @jsx mdx */' + code}
+                    scope={{ mdx }}
+                >
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'stretch'
+                        }}
+                    >
+                        <div style={{ width: '100%' }}>
+                            <h2
+                                style={{
+                                    backgroundColor: 'gray',
+                                    borderTopLeftRadius: '.1em'
+                                }}
+                            >
+                Editor
+                            </h2>
+                            <LiveEditor />
+                        </div>
+                        <div
+                            style={{
+                                width: '100%',
+                                backgroundColor: 'white',
+                                color: 'black'
+                            }}
+                        >
+                            <h2
+                                style={{
+                                    backgroundColor: 'gray',
+                                    borderTopRightRadius: '.1em',
+                                    color: 'white'
+                                }}
+                            >
                 Preview
-              </h2>
-              <LivePreview />
-            </div>
-          </div>
-          <LiveError />
-        </LiveProvider>
-      </Paper>
-    );
-  }
+                            </h2>
+                            <LivePreview />
+                        </div>
+                    </div>
+                    <LiveError />
+                </LiveProvider>
+            </Paper>
+        );
+    }
 
-  if (render) {
+    if (render) {
+        return (
+            <div style={{ marginTop: '40px' }}>
+                <LiveProvider code={children}>
+                    <LivePreview />
+                </LiveProvider>
+            </div>
+        );
+    }
+
     return (
-      <div style={{ marginTop: '40px' }}>
-        <LiveProvider code={children}>
-          <LivePreview />
-        </LiveProvider>
-      </div>
+        <Highlight {...defaultProps} code={children.trim()} language={language}>
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                <pre className={className} style={{ ...style, padding: '20px' }}>
+                    {tokens.map((line, i) => (
+                        <div key={i} {...getLineProps({ line, key: i })}>
+                            {line.map((token, key) => (
+                                <span key={key} {...getTokenProps({ token, key })} />
+                            ))}
+                        </div>
+                    ))}
+                </pre>
+            )}
+        </Highlight>
     );
-  }
-
-  return (
-    <Highlight {...defaultProps} code={children.trim()} language={language}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: '20px' }}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
-  );
 };
 
 export default ReactLiveEditor;
