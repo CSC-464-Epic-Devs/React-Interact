@@ -22,17 +22,17 @@ const secondary = '#05a68e';
 import Paper from '@material-ui/core/Paper';
 
 const theme = createMuiTheme({
-  palette: {
-    primary: { main: primary },
-    secondary: {
-      main: secondary
+    palette: {
+        primary: { main: primary },
+        secondary: {
+            main: secondary
+        },
+        text: {
+            primary: '#fff',
+            secondary: '#000000'
+        }
     },
-    text: {
-      primary: '#fff',
-      secondary: '#000000'
-    }
-  },
-  spacing: 2
+    spacing: 2
 });
 
 /* eslint-disable */

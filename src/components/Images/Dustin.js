@@ -14,9 +14,9 @@ import Img from 'gatsby-image';
  */
 
 const Image = props => {
-  //string str = "`query { placeholderImage: file(relativePath: { eq: \"" + {imgfile} +"\" }) \{ childImageSharp \{fluid(maxWidth: 300) \{...GatsbyImageSharpFluid\}\}\}\}`"
+    //string str = "`query { placeholderImage: file(relativePath: { eq: \"" + {imgfile} +"\" }) \{ childImageSharp \{fluid(maxWidth: 300) \{...GatsbyImageSharpFluid\}\}\}\}`"
 
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "dustin.jpg" }) {
         childImageSharp {
@@ -27,8 +27,8 @@ const Image = props => {
       }
     }
   `);
-  //const data = useStaticQuery(graphql,{str});
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} {...props} />;
+    //const data = useStaticQuery(graphql,{str});
+    return <Img fluid={data.placeholderImage.childImageSharp.fluid} {...props} />;
 };
 
 export default Image;
