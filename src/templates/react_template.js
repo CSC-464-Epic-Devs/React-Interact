@@ -17,17 +17,17 @@ const primary = '#190c43';
 const secondary = '#430c36';
 
 const theme = createMuiTheme({
-  palette: {
-    primary: { main: primary },
-    secondary: {
-      main: secondary
+    palette: {
+        primary: { main: primary },
+        secondary: {
+            main: secondary
+        },
+        text: {
+            primary: '#fff',
+            secondary: '#000000'
+        }
     },
-    text: {
-      primary: '#fff',
-      secondary: '#000000'
-    }
-  },
-  spacing: 2
+    spacing: 2
 });
 
 /* eslint-disable */
@@ -43,24 +43,24 @@ const components = {
 /* eslint-enable */
 
 const ReactTemplate = ({ data }) => {
-  const post = data.mdx;
-  const classes = useStyles(theme);
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Container>
-          <Header />
-          <div>
-            <Paper className={classes.paper}>
-              <MDXProvider components={components}>
-                <MDXRenderer>{post.body}</MDXRenderer>
-              </MDXProvider>
-            </Paper>
-          </div>
-        </Container>
-      </ThemeProvider>
-    </>
-  );
+    const post = data.mdx;
+    const classes = useStyles(theme);
+    return (
+        <>
+            <ThemeProvider theme={theme}>
+                <Container>
+                    <Header />
+                    <div>
+                        <Paper className={classes.paper}>
+                            <MDXProvider components={components}>
+                                <MDXRenderer>{post.body}</MDXRenderer>
+                            </MDXProvider>
+                        </Paper>
+                    </div>
+                </Container>
+            </ThemeProvider>
+        </>
+    );
 };
 
 export const query = graphql`
