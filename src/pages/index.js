@@ -12,7 +12,6 @@ import SEO from 'components/seo';
 import Logo from 'components/Images/logo';
 import ContentBanner from 'components/ContentBanner';
 import Button from '@material-ui/core/Button';
-import styled from 'styled-components';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const main = '#03a9f4';
