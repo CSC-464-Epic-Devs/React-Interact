@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"]
+      modules: [path.resolve(__dirname, 'src'), 'node_modules']
     }
   });
 };
@@ -12,7 +12,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode, basePath: "" });
+    const slug = createFilePath({ node, getNode, basePath: '' });
     createNodeField({
       node,
       name: `slug`,

@@ -45,10 +45,10 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-background-image-es5",
+      resolve: 'gatsby-background-image-es5',
       options: {
         // add your own characters to escape, replacing the default ':/'
-        specialChars: "/:"
+        specialChars: '/:'
       }
     },
     `gatsby-plugin-styled-components`,
