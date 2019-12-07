@@ -6,7 +6,7 @@ import Layout from "components/layout";
 
 function sitemap({ data }) {
   const pages = data.allSitePage.edges.map(page => (
-    <li>
+    <li key={page.node.path}>
       <Link to={page.node.path}>{page.node.path}</Link>
     </li>
   ));
