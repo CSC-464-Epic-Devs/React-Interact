@@ -1,19 +1,20 @@
 import React from "react";
 
-import "components/styles/layout.css";
 import Layout from "components/layout";
 
 import { graphql } from "gatsby";
 
 import CodeBlock from "components/Editors/CodeBlock";
+import HighLightLink from "components/highLightLink";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import SEO from "components/seo";
-
+import Content from "components/ContentBanner";
 /* eslint-disable */
 const components = {
   pre: props => <div {...props} />,
-  code: CodeBlock
+  code: CodeBlock,
+  a: HighLightLink
 };
 /* eslint-enable */
 
@@ -24,9 +25,11 @@ const MDXTemplate = ({ data }) => {
       <Layout>
         <SEO title={post.frontmatter.title} />
         <p>Last Edited: {post.frontmatter.date}</p>
-        <MDXProvider components={components}>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </MDXProvider>
+        <Content>
+          <MDXProvider components={components}>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </MDXProvider>
+        </Content>
       </Layout>
     </>
   );
