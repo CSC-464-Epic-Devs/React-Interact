@@ -2,12 +2,11 @@
 title: JSX
 theme: default
 ---
-import Explanation from "../../../components/Explanation";
 
 # JSX
 
 ### Take a look at this code snippet:
-```jsx
+```js
 const snippet = <h1>Example<h1>
 ```
 
@@ -16,14 +15,19 @@ This is JSX, a syntax extension to JavaScript. It helps us define the UI for Rea
 Using this syntax, lets create some React code!!!
 
 Try to edit this code:
-```react live=true
+```js live=true
 function Example() {
     const sampleHeader = <h1>Edit Me</h1>;
 
     return <div>{sampleHeader}</div>
 }
 ```
-<Explanation header="What's going on here?">
-    Temp Text
-</Explanation>
+
+import NoteBlock from '../../../components/NoteBlock.js'
+
+<NoteBlock header="What's going on here?">
+    <div>
+        <text>Sample Text</text>
+    </div>
+</NoteBlock>
 
