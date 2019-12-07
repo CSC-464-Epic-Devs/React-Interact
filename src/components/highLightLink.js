@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/highLightLink.css";
-import { Link } from "gatsby";
 
 function HighLightLink(props) {
   return (
