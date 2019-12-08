@@ -32,14 +32,6 @@ const ReactLiveEditor = ({ children, className, live, render }) => {
                         }}
                     >
                         <div style={{ width: '100%' }}>
-                            <h2
-                                style={{
-                                    backgroundColor: 'gray',
-                                    borderTopLeftRadius: '.1em'
-                                }}
-                            >
-                Editor
-                            </h2>
                             <LiveEditor />
                         </div>
                         <div
@@ -49,15 +41,6 @@ const ReactLiveEditor = ({ children, className, live, render }) => {
                                 color: 'black'
                             }}
                         >
-                            <h2
-                                style={{
-                                    backgroundColor: 'gray',
-                                    borderTopRightRadius: '.1em',
-                                    color: 'white'
-                                }}
-                            >
-                Preview
-                            </h2>
                             <LivePreview />
                         </div>
                     </div>
