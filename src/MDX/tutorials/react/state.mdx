@@ -52,22 +52,3 @@ class Toggle extends React.Component {
 ```
 
 Alright, so our button will call our handleClick function, and then what happens is it sets on to the opposite value of on toggling it.
-
-## setState is asynchronous
-
-In the example above we only call setState once in handleClick, however if we were to call setState several times in rapid successtion, we may overwrite our current state with a previous state.
-
-Consider this potential callback:
-
-```js
-handleClick() {
-    this.setState({value: 1})
-    this.setState({value: 2})
-    this.setState({value: 3})
-    this.setState({value: 4})
-}
-```
-
-What is the value of this.state.value after handleClick is called? Answer: not determinable. setState is asynchronous, so it is unknown which queued calls will be executed first.
-
-setState is asynchronous for optimization purposes.
