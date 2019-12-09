@@ -34,11 +34,11 @@ A valid functional component can be shown in the below example.
 
 # Class Components
 Class components are more complex than functional components. 
-It requires you to extend from React. Component and create a render 
+It requires you to extend from React's Component class and create a render 
 function which returns a React element. You can pass data from one class 
 to other class components. You can create a class by defining a class that 
-extends Component and has a render function. Valid class component is shown 
-in the below example.
+extends Component and has a render function.
+Here is an example of a basic class component
 
 ```js
     class MyComponent extends React.Component {  
@@ -51,7 +51,7 @@ in the below example.
 ```
 # Rendering a Component 
 
-elements can also represent user-defined components:
+Elements can also represent user-defined components:
 
 ```js
 const element = <Welcome name="Sara" />;
@@ -73,12 +73,9 @@ ReactDOM.render(
 );
 ```
 
-# Composing Components 
+# Reusing Components
 
-Components can refer to other components in their output. 
-This lets us use the same component abstraction for any level of detail.
-A button, a form, a dialog, a screen: in React apps, 
-all those are commonly expressed as components.
+Components can use other available components.
 
 For example, we can create an App component that renders Welcome many times:
 
@@ -99,6 +96,9 @@ function App() {
 }
 );
 ```
+In this example, we reuse the **Welcome** functional component and provide it a
+string value for the prop *name*. Each **Welcome** component uses takes their
+respective prop and outputs them as defined.
 
 # Component Constructor
 

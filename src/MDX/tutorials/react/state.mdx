@@ -25,13 +25,13 @@ class Toggle extends React.Component {
 }
 ```
 
-We have a react component called Toggle and it has a member variable called state which is a javascript object with one attribute: on, set to false by default.
+We have a React component called Toggle and it has a member variable called state which is a javascript object with one attribute: on, set to false by default.
 
 Notice we can access our components state inside the render function. However, it is not very useful to have a static state, so how do we change that?
 
 We can make a member function that will handle this click, but first we must bind it to this in the constructor.
 
-```react live=true
+```js live=true
 class Toggle extends React.Component {
     constructor(props) {
         super(props);
