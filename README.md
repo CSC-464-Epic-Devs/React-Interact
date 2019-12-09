@@ -19,7 +19,7 @@ The site is broken down into categories such as React, HTML, CSS, JS, and these 
 
 `npm install`
 
-`npm install -g gatsby-cli` following command.
+`npm install -g gatsby-cli`
 
 #### start development server
 
@@ -51,17 +51,20 @@ theme: react
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
 
-In the MDX folder, mdx files page locations on the site are directly tied to their path in the folder. So the example above would be located at `http://localhost:8000/tutorials/helloworld`
+In the MDX folder, mdx files page locations on the site are directly tied to their path in the folder. 
+So this example would be located at `http://localhost:8000/tutorials/helloworld`
 
-At the very top of the example there is:
-```markdown
+At the very top of this example there is:
 ---
 title: Hello World
 date: 2019-12-06
 theme: react
 ---
+
+This is called frontmatter for the mdx file. 
+The title will be the page title.
+The date will be placed right below the title and the
+theme is used to determine the color scheme for the page. 
+*There should only be one definition for the frontmatter.*
 ```
 
-This is called frontmatter for the mdx file. The title will be the page title. The date will be placed right below the title and the theme is used to determine the color scheme for the page.
-
-At the very end of the example there is a typical markdown code block with a react live=true. This tells MDX to treat this block as a live editor which allows the user to fiddle with the code snippet. In order to just have a none editable code block, simply do not use live=true and the code wll be syntax highlighted like normal.
