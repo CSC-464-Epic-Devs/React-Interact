@@ -30,7 +30,7 @@ Then create Counter and include a static button which will be set to 0.
 
 
 
-```react
+```js
 // src/App.js
 class App extends Component {
   render() {
@@ -61,7 +61,7 @@ it is much more readable–and performant–to move this outside of render() to 
 which is also an arrow function so that it only fires upon a button click. 
 A nice feature of arrow functions is that this is implicitly set for us so we don’t also have to explicitly bind our function.
 
-```React
+```js
 // src/App.js
 class Counter extends Component {
   state = {
