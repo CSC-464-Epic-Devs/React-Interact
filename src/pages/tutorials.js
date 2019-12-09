@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
-import BookBackground from "components/BackgroundImages/tutorials/BookBackground";
-import HTMLBackgorund from "components/BackgroundImages/tutorials/HTMLBackground";
-import CSSBackgorund from "components/BackgroundImages/tutorials/CSSBackground";
-import JSBackgorund from "components/BackgroundImages/tutorials/JSBackground";
-import ReactBackgorund from "components/BackgroundImages/tutorials/ReactBackground";
-import Layout from 'components/layout';
-
+import BookBackground from "../components/BackgroundImages/tutorials/BookBackground";
+import HTMLBackgorund from "../components/BackgroundImages/tutorials/HTMLBackground";
+import CSSBackgorund from "../components/BackgroundImages/tutorials/CSSBackground";
+import JSBackgorund from "../components/BackgroundImages/tutorials/JSBackground";
+import ReactBackgorund from "../components/BackgroundImages/tutorials/ReactBackground";
 
 const TutorialsPage = () => (
-  <Layout>
+  <>
     <BookBackground>
       <div style={{ color: "black", height: "300px" }}></div>
     </BookBackground>
@@ -37,7 +35,7 @@ const TutorialsPage = () => (
         <div style={{ color: "black", height: "300px" }}></div>
       </ReactBackgorund>
     </Link>
-  </Layout>
+  </>
 );
 
 export default TutorialsPage;

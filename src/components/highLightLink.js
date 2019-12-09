@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import "./styles/highLightLink.css";
 
@@ -10,3 +11,17 @@ function HighLightLink(props) {
 }
 
 export default HighLightLink;
+=======
+import React from "react";
+import "./styles/highLightLink.css";
+
+function HighLightLink(props) {
+  return (
+    <a className="highLightLink" {...props}>
+      {props.children}
+    </a>
+  );
+}
+
+export default HighLightLink;
+>>>>>>> Recieved changes from current dev branch
