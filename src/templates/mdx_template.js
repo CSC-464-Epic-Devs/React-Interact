@@ -24,8 +24,8 @@ const MDXTemplate = ({ data }) => {
     <>
       <Layout>
         <SEO title={post.frontmatter.title} />
-        <p>Last Edited: {post.frontmatter.date}</p>
         <Content>
+          <p>Last Edited: {post.frontmatter.date}</p>
           <MDXProvider components={components}>
             <MDXRenderer>{post.body}</MDXRenderer>
           </MDXProvider>
