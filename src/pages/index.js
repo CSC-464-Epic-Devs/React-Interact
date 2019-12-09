@@ -102,16 +102,16 @@ const InfoBanner = () => (
                 }}
             >
                 <div>
-                    <h2>X</h2>
-                    <p>Tutorials Available</p>
+                    <h2>06</h2>
+                    <h3>Tutorials Available</h3>
                 </div>
                 <div>
-                    <h2>Y</h2>
-                    <p>Projects and Examlpes</p>
+                    <h2>01</h2>
+                    <h3>Projects and Examlpes</h3>
                 </div>
                 <div>
-                    <h2>Z</h2>
-                    <p>Frameworks</p>
+                    <h2>01</h2>
+                    <h3>Frameworks</h3>
                 </div>
             </div>
         </ContentBanner>
