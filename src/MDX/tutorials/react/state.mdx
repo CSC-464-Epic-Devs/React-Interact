@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: React State
 date: 2019-12-07
@@ -52,3 +53,79 @@ class Toggle extends React.Component {
 ```
 
 Alright, so our button will call our handleClick function, and then what happens is it sets on to the opposite value of on toggling it.
+=======
+---
+title: React State
+date: 2019-12-07
+theme: react
+---
+
+# React State
+
+React follows the [MVC](https://www.geeksforgeeks.org/mvc-design-pattern/) - (Model View Controller) design pattern.
+
+Consider the following code snippet:
+
+```js
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false
+    };
+  }
+
+  render() {
+    return <button>{this.state.on}</button>;
+  }
+}
+```
+
+We have a React component called Toggle and it has a member variable called state which is a javascript object with one attribute: on, set to false by default.
+
+Notice we can access our components state inside the render function. However, it is not very useful to have a static state, so how do we change that?
+
+We can make a member function that will handle this click, but first we must bind it to this in the constructor.
+
+```js live=true
+class Toggle extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            on: false
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState({on: !this.state.on})
+    }
+
+    render() {
+        return <button onClick={this.handleClick}>{this.state.on.toString()}</button>
+    }
+}
+```
+
+Alright, so our button will call our handleClick function, and then what happens is it sets on to the opposite value of on toggling it.
+
+<br/>
+
+<a href="../../Projects/React/counterapp" style={{float: "right", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="primary">
+Next
+</Button>
+</a>
+
+<a href="./" style={{float: "right", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="primary">
+Home
+</Button>
+</a>
+
+<a href="./props" style={{float: "left", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="black">
+Previous
+</Button>
+</a>
+>>>>>>> develop
