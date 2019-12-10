@@ -163,7 +163,7 @@ const TeamPictures = () => (
                         <Adesh
                             style={{ width: '200px', height: '250px', borderRadius: '50%' }}
                         />
-                        <p>Dustin (Developer)</p>
+                        <p>Adesh (Developer)</p>
                     </div>
                 </div>
             </div>
