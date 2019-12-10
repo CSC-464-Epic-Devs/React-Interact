@@ -13,7 +13,6 @@ import Logo from 'components/Images/logo';
 import ContentBanner from 'components/ContentBanner';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { Link } from "gatsby";
 
 const main = '#03a9f4';
 
