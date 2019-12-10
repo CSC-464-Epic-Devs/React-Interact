@@ -1,0 +1,67 @@
+---
+title: JSX
+date: 2019-12-06
+theme: default
+---
+
+# JSX
+
+### Take a look at this code snippet:
+```js
+const snippet = <h1>Example<h1>
+```
+
+This is JSX, a syntax extension to JavaScript. It helps us define the UI for React Components.  
+
+Using this syntax, lets create some React code!!!
+
+Try to edit this code:
+```js live=true
+function Example() {
+    const sampleHeader = <h1>Edit Me</h1>;
+    return <div>{sampleHeader}</div>
+}
+```  
+
+### What is going on here?
+```js
+function Example() {...}
+```
+This is a React functional component. For now we can think of this as a way to create a UI block.
+```js
+const sampleHeader = <h1>Edit Me</h1>;
+return <div>{sampleHeader}</div>
+```
+In this snippet, we are storing the heading *Edit Me* in a variable called **sampleHeader**.
+The return statement takes **sampleHeader** and places it in the div block.
+
+This is equivalent to:
+```js live=true
+function Example() {
+    return (
+        <div>
+            <h1>Edit Me</h1>
+        </div>
+    );
+}
+```
+
+<br/><br/>
+
+<a href="./components" style={{float: "right", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="primary">
+Next
+</Button>
+</a>
+
+<a href="./" style={{float: "right", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="primary">
+Home
+</Button>
+</a>
+
+<a href="./introduction" style={{float: "left", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="black">
+Previous
+</Button>
+</a>

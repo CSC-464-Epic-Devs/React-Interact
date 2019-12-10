@@ -5,48 +5,55 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Header from "./header";
-import "./layout.css";
+import Header from './header';
+import './styles/layout.css';
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+import { makeStyles } from '@material-ui/core/styles';
+
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const primary = '#202020';
+const secondary = '#00ff99';
+
+import Paper from '@material-ui/core/Paper';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: { main: primary },
+        secondary: {
+            main: secondary
+        },
+        text: {
+            primary: '#fff',
+            secondary: '#000000'
         }
-      }
-    }
-  `);
+    },
+    spacing: 2
+});
+
+/* eslint-disable */
+const useStyles = makeStyles(theme => ({
+  paper: { background: "#303030" }
+}));
+
+export default function Layout({ children }) {
+  const classes = useStyles(theme);
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <ThemeProvider theme={theme}>
+          <Header />
+          <div>
+            <Paper className={classes.paper}>{children}</Paper>
+          </div>
+      </ThemeProvider>
     </>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
 };
-
-export default Layout;

@@ -5,6 +5,8 @@ html {
 }
 body {
   margin: 0;
+  background: #000;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -509,6 +511,7 @@ th {
   font-weight: bold;
 }
 li {
+  text-decoration: none;
   margin-bottom: calc(1.45rem / 2);
 }
 ol li {
@@ -619,4 +622,18 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+body {
+  color: #fff;
+}
+
+link {
+  color: #fff;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }

@@ -1,42 +1,61 @@
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
+import { Link } from 'gatsby';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-);
+const useStyles = makeStyles(theme => ({
+    root: {
+        flexGrow: 1
+    },
+    menuButton: {
+        marginRight: theme.spacing(2)
+    },
+    title: {
+        flexGrow: 1
+    }
+}));
 
-Header.propTypes = {
-  siteTitle: PropTypes.string
-};
+import { AppBar, Toolbar, Typography, Button, Grid } from '@material-ui/core/';
 
-Header.defaultProps = {
-  siteTitle: ``
-};
-
-export default Header;
+export default function Header() {
+    const classes = useStyles();
+    return (
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Toolbar>
+                    <Grid
+                        justify="space-between" // Add it here :)
+                        container
+                    >
+                        <Grid item>
+                            <Typography variant="h3" edge="start" aria-label="menu">
+                                <Link style={{ textDecoration: 'none', color: 'white', paddingLeft: '10px'}} to="/">
+                  React Interact
+                                </Link>
+                            </Typography>
+                        </Grid>
+                        <Grid item style={{ margin: 'auto 0' }}>
+                            <Link to="/" style={{ textDecoration: 'none' }}>
+                                <Button
+                                    variant="outlined"
+                                    color="secondary"
+                                    className={classes.menuButton}
+                                >
+                  Home
+                                </Button>
+                            </Link>
+                            <Link to="/tutorials" style={{ textDecoration: 'none' }}>
+                                <Button
+                                    variant="outlined"
+                                    color="secondary"
+                                    className={classes.menuButton}
+                                >
+                  Tutorials
+                                </Button>
+                            </Link>
+                        </Grid>
+                    </Grid>
+                </Toolbar>
+            </AppBar>
+        </div>
+    );
+}

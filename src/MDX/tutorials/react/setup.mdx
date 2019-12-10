@@ -1,0 +1,91 @@
+---
+title: Set Up
+date: 2019-12-06
+theme: react
+---
+
+import ContentBanner from "components/ContentBanner";
+import Logo from 'components/Images/logo';
+
+# Set Up
+
+On this page we will be go through the process of setting up the coding environment.
+
+We recommend using VS Code as your code editor. <a style={{textDecorationLine: 'underline'}} href="https://code.visualstudio.com/download">Click Here</a>
+to download VS Code.
+
+<br/>
+
+## Download NodeJS
+
+Node.js is an open-source, cross-platform, 
+JavaScript runtime environment that executes JavaScript code outside of a browser.
+Node.js lets developers use JavaScript to write command line tools and for 
+running scripts on the server-side to produce 
+dynamic web page content before the page is sent to the user's web browser.
+<a style={{textDecorationLine: 'underline'}} href="https://nodejs.org/en/download/">Click Here </a>
+to download NodeJS <br/><br/>
+
+<br/>
+
+## Command Line Setup
+
+To make a new project execute the following statements in your command line.
+If you use VS Code you will get a terminal inside the text editor itself.<br/><br/>
+
+### Part 1 : Verify Installation
+
+First check if NodeJS was successfully installed. To do so use the following commands.
+
+&nbsp; 'node --version'
+
+&nbsp; 'npm --version'
+
+They should output the versions for Node.js and NPM.<br/><br/>
+
+
+### Part 2 : Install Create-React-App
+
+Now you can install your first node package with npm on the command line. 
+You will install it globally with a -g flag. 
+Because of installing it globally, you will always have access to it on the command line.
+
+Type the following command to install create-react-app:
+
+&nbsp; 'npm install -g create-react-app'
+
+<br/>
+
+### Part 3 : Make A New Project
+
+To make a new project type the following command:
+
+&nbsp; 'npm create-react-app project_name'
+
+This will creat a new directory for the project. To navigate to this directory
+and start the project type
+
+&nbsp; 'cd project_name'
+
+&nbsp; 'npm start'
+
+The command line should give you an output where you can find the application in the browser. 
+The default should be localhost:8000. 
+
+<a href="./introduction" style={{float: "right", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="primary">
+Next
+</Button>
+</a>
+
+<a href="./" style={{float: "right", width:"33.33%", textAlign:"center"}}>
+<Button variant="outlined" color="primary">
+Home
+</Button>
+</a>
+
+<a href="#" style={{float: "left", width:"33.33%", textAlign:"center", color: "#000000"}}>
+<Button variant="outlined" color="black">
+Previous
+</Button>
+</a>

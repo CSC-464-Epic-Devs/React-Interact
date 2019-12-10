@@ -1,97 +1,70 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# React Interact
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+React Interact is a tutorial website to ease the burdon of learning React and other web technologies.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Using the site
 
-## 🚀 Quick start
+The site is broken down into categories such as React, HTML, CSS, JS, and these categories are broken in modules. The user is free to follow the modules at their own will or follow the topics in the order presented.
 
-1.  **Create a Gatsby site.**
+## Contributing
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+### Steps:
+#### Download the repo: 
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+`git clone https://github.com/CSC-464-Regular-Devs/React-Interact.git`
 
-1.  **Start developing.**
+`cd React-Interact`
 
-    Navigate into your new site’s directory and start it up.
+#### install dependencies
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+`npm install`
 
-1.  **Open the source code and start editing!**
+`npm install -g gatsby-cli`
 
-    Your site is now running at `http://localhost:8000`!
+#### start development server
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+`gatsby develop`
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+Gatsby both builds the site and starts the development server. If you do not have gatsby-cli installed, you can acheive the same by running `npm run-script develop`
 
-## 🧐 What's inside?
+After running, the site should be displayed at http://localhost:8000/.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+### Contributing Content
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+Content can be contributed in the form of [MDX](https://www.gatsbyjs.org/docs/mdx/)
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+All MDX content is consolidated in React-Interact/src/MDX
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+Any files with the extension .mdx in this folder will be interpreted as a page on the site.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+An example page would be: React-Interact/src/MDX/tutorials/helloworld.mdx
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+```markdown
+---
+title: Hello World
+date: 2019-12-06
+theme: react
+---
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+## I have a lot of great content to give
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+In the MDX folder, mdx files page locations on the site are directly tied to their path in the folder. 
+So this example would be located at `http://localhost:8000/tutorials/helloworld`
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+At the very top of this example there is:
+---
+title: Hello World
+date: 2019-12-06
+theme: react
+---
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+This is called frontmatter for the mdx file. 
+The title will be the page title.
+The date will be placed right below the title and the
+theme is used to determine the color scheme for the page. 
+*There should only be one definition for the frontmatter.*
+```
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
