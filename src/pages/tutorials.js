@@ -6,7 +6,6 @@ import CSSBackgorund from "components/BackgroundImages/tutorials/CSSBackground";
 import JSBackgorund from "components/BackgroundImages/tutorials/JSBackground";
 import ReactBackgorund from "components/BackgroundImages/tutorials/ReactBackground";
 import Layout from 'components/layout';
-import { rgbToHex } from "@material-ui/core/styles";
 
 
 const TutorialsPage = () => (
