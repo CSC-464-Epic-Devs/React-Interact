@@ -4,6 +4,7 @@ Date: 2019-06-29
 theme: React
 ---
 
+import { Component } from "react";
 
 # React Counter App Tutorial 
 
@@ -20,7 +21,7 @@ To start, create a new React app called counter using create-react-app.
 
 
 
-Open your web browser to http://localhost:3000/ to see the standard React welcome page. 
+Open your web browser to [http://localhost:3000/](http://localhost:3000/) to see the standard React welcome page. 
 We only need to update the src/App.js file in this tutorial.
 
 ## Counter Component
@@ -64,13 +65,16 @@ A nice feature of arrow functions is that this is implicitly set for us so we do
 ```js
 // src/App.js
 class Counter extends Component {
-  state = {
-    count: 0
-  };
-  handleClick = () => {
-    this.setState(({ count }) => ({
-      count: count + 1
-    }));
+    constructor() {
+    this.state = {
+      count: 0
+    };
+
+    this.handleClick = () => {
+      this.setState(({ count }) => ({
+        count: count + 1
+      }));
+    };
   };
   render() {
     return <button onClick={this.handleClick}>{this.state.count}</button>;
@@ -83,24 +87,21 @@ As a final optimization we can use prevState which is built into React.
   is asynchronous, using prevState ensures no errors around this timing.
   
 
-```React live=true
-class CounterApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0 };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  
-handleClick() {
-  this.setState({ count: this.state.count + 1 });
-};
-  
+```React live=true 
+class Counter extends React.Component {
+    constructor() {
+    this.state = {
+      count: 0
+    };
+
+    this.handleClick = () => {
+      this.setState(({ count }) => ({
+        count: count + 1
+      }));
+    };
+  };
   render() {
-    return (
-      <div>
-        <button onClick={this.handleClick}>{this.state.count}</button>
-      </div>
-    );
+    return <button onClick={this.handleClick}>{this.state.count}</button>;
   }
 }
 ```
