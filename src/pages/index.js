@@ -37,15 +37,15 @@ const TopBanner = () => (
         </div>
         <h1>Regular Devs</h1>
         <ThemeProvider theme={theme}>
-            <a href="../tutorials/react">
-            <Button variant="outlined" color="primary">
-        Learn ReactJS
-            </Button>
+            <a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/react/">
+                <Button variant="outlined" color="primary">
+            Learn ReactJS
+                </Button>
             </a>
             <div
                 style={{ width: '5px', height: 'auto', display: 'inline-block' }}
             ></div>
-            <a href="../tutorials">
+            <a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials">
             <Button variant="outlined" color="primary">
         All Tutorials
             </Button>
