@@ -19,11 +19,7 @@ The site is broken down into categories such as React, HTML, CSS, JS, and these 
 
 `npm install`
 
-<<<<<<< HEAD
-`npm install -g gatsby-cli`
-=======
 `npm install -g gatsby-cli` following command.
->>>>>>> Recieved changes from current dev branch
 
 #### start development server
 
@@ -65,14 +61,5 @@ date: 2019-12-06
 theme: react
 ---
 
-<<<<<<< HEAD
-This is called frontmatter for the mdx file. 
-The title will be the page title.
-The date will be placed right below the title and the
-theme is used to determine the color scheme for the page. 
-*There should only be one definition for the frontmatter.*
-```
-=======
 This is called frontmatter for the mdx file. The title will be the page title. The date will be placed right below the title and the theme is used to determine the color scheme for the page.
->>>>>>> Recieved changes from current dev branch
 
