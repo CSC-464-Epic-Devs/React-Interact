@@ -13,6 +13,7 @@ import Logo from 'components/Images/logo';
 import ContentBanner from 'components/ContentBanner';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { Link } from "gatsby";
 
 const main = '#03a9f4';
 
@@ -37,15 +38,15 @@ const TopBanner = () => (
         </div>
         <h1>Regular Devs</h1>
         <ThemeProvider theme={theme}>
-            <a href="../tutorials/react">
-            <Button variant="outlined" color="primary">
-        Learn ReactJS
-            </Button>
+            <a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/react/">
+                <Button variant="outlined" color="primary">
+            Learn ReactJS
+                </Button>
             </a>
             <div
                 style={{ width: '5px', height: 'auto', display: 'inline-block' }}
             ></div>
-            <a href="../tutorials">
+            <a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials">
             <Button variant="outlined" color="primary">
         All Tutorials
             </Button>
