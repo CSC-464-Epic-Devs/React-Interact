@@ -9,7 +9,8 @@ The site is broken down into categories such as React, HTML, CSS, JS, and these 
 ## Contributing
 
 ### Steps:
-#### Download the repo: 
+
+#### Download the repo:
 
 `git clone https://github.com/CSC-464-Regular-Devs/React-Interact.git`
 
@@ -50,21 +51,20 @@ theme: react
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
-
-In the MDX folder, mdx files page locations on the site are directly tied to their path in the folder. 
+In the MDX folder, mdx files page locations on the site are directly tied to their path in the folder.
 So this example would be located at `http://localhost:8000/tutorials/helloworld`
 
-At the very top of this example there is frontmatter for the mdx file. 
+At the very top of this example there is frontmatter for the mdx file.
 Frontmatter is metadata you put in the file that is used in page generation.
 The title will be the page title.
 The date will be placed right below the title and the
-theme is used to determine the color scheme for the page. 
-*There should only be one definition for the frontmatter and all fields are unique*
+theme is used to determine the color scheme for the page.
+_There should only be one definition for the frontmatter and all fields are unique_
 ```
 
 Once our markdown example file is created, run "gatsby develop" or "npm run-script develop"
 The page will now be located at [http://localhost:8000/tutorials/helloworld/](http://localhost:8000/tutorials/helloworld/)
 
 Note: use of the <a> tag is not allowable. Since our project is on github pages a url prefix is required that is defined in gatsby-config. Either use a markdown link or the gatsby <Link> tag for generating links.
- 
+
 When your content is ready a pull request can be made. Once reviewed and accepted it will go into develop to be merge in with changed made by additional users.
