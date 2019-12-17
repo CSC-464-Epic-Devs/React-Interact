@@ -9,15 +9,15 @@ theme: React
 Components are blocks of code that are independent from each and could use again.
 Their functionality is similar to that of JavaScript functions.
  They have a render function that returns html.
-Compoents happen to accept props which we will talk about in 
+Components happen to accept props which we will talk about in 
 later concepts as input and return React elements. These react elements
-are the ones you would see on thescreen. 
+are the ones you would see on the screen. 
 #### In ReactJS, we have mainly two types of components. They are :
 # Functional Components
 Functional Components only contain a render method and do not have their own state. 
 They are simply JavaScript functions that may or may not receive data as parameters. 
 A valid functional component can be shown in the below example.
- It takes props as inputand renders content on the screen.
+ It takes props as input and renders content on the screen.
 ```js
     function WelcomeMessage(props) {  
       return <h1>Welcome to the , {props.name}</h1>;  
