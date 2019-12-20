@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{Nbor:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),r=a.n(n),l=a("Wbzz"),o=a("Bl7J"),c=a("vrFN");t.default=function(){return r.a.createElement(o.a,null,r.a.createElement(c.a,{title:"Extra Page"}),r.a.createElement("h1",null,"Hi from the extra page"),r.a.createElement("p",null,"Feature made with Git Flow!"),r.a.createElement(l.Link,{to:"/"},"Go back to the homepage"))}}}]);
-//# sourceMappingURL=component---src-pages-extra-js-208d93a445854061953c.js.map
