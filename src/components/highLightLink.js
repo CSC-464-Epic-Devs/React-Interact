@@ -1,12 +1,24 @@
 import React from "react";
 import "./styles/highLightLink.css";
+import { Link } from 'gatsby';
 
 function HighLightLink(props) {
+
+  /* If it is an internal link: use gatsby Link */
+  if (props.href.charAt(0) == "/") {
   return (
-    <a className="highLightLink" {...props}>
+    <Link to={props.href} className="highLightLink" {...props}>
       {props.children}
-    </a>
+    </Link>
   );
+  }
+  else {
+    return (
+      <a href={props.href} className="highLightLink" {...props}>
+        {props.children}
+      </a>
+    );
+  }
 }
 
 export default HighLightLink;

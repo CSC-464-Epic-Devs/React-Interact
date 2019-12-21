@@ -4,6 +4,9 @@ date: 2019-12-07
 theme: react
 ---
 
+import PrevNextNav from "components/prevNextNav";
+
+
 # React State
 
 React follows the [MVC](https://www.geeksforgeeks.org/mvc-design-pattern/) - (Model View Controller) design pattern.
@@ -53,22 +56,8 @@ class Toggle extends React.Component {
 
 Alright, so our button will call our handleClick function, and then what happens is it sets on to the opposite value of on toggling it.
 
-<br/>
 
-<a href="https://csc-464-regular-devs.github.io/React-Interact/Projects/React/counterapp" style={{float: "right", width:"33.33%", textAlign:"center"}}>
-<Button variant="outlined" color="primary">
-Next
-</Button>
-</a>
 
-<a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/react/" style={{float: "right", width:"33.33%", textAlign:"center"}}>
-<Button variant="outlined" color="primary">
-Home
-</Button>
-</a>
+<br/><br/>
 
-<a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/react/props" style={{float: "left", width:"33.33%", textAlign:"center"}}>
-<Button variant="outlined" color="black">
-Previous
-</Button>
-</a>
+<PrevNextNav next="/projects/react/counterapp" home="/tutorials/react/" prev="/tutorials/react/props" />

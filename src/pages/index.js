@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'gatsby';
 import Layout from 'components/layout';
 import CodeBackground from 'components/BackgroundImages/CodeBackground';
 import FogBackground from 'components/BackgroundImages/FogBackground';
@@ -37,19 +38,19 @@ const TopBanner = () => (
         </div>
         <h1>Regular Devs</h1>
         <ThemeProvider theme={theme}>
-            <a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/react/">
+            <Link to="/tutorials/react/">
                 <Button variant="outlined" color="primary">
             Learn ReactJS
                 </Button>
-            </a>
+            </Link>
             <div
                 style={{ width: '5px', height: 'auto', display: 'inline-block' }}
             ></div>
-            <a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials">
+            <Link to="/tutorials">
             <Button variant="outlined" color="primary">
         All Tutorials
             </Button>
-            </a>
+            </Link>
         </ThemeProvider>
     </ContentBanner>
 );
