@@ -9,13 +9,13 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import SEO from "components/seo";
 import Content from "components/ContentBanner";
-import mdxLink from "components/mdxLink"
+import HyperLink from "components/highLightLink"
 
 /* eslint-disable */
 const components = {
   pre: props => <div {...props} />,
   code: CodeBlock,
-  a: mdxLink
+  a: HyperLink
 };
 /* eslint-enable */
 
