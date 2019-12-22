@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: 'React-Interact/',
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'React-Interact',
     description:
-      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+      'Tutorial website devoted to encouraging aspiring developers to use the react framework',
     author: 'Regular Developers'
   },
   plugins: [
