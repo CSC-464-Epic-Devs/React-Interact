@@ -5,8 +5,9 @@ import { mdx } from '@mdx-js/react';
 
 import Paper from '@material-ui/core/Paper';
 
-const ReactLiveEditor = ({ children, className, live, render }) => {
+const ReactLiveEditor = ({ children, className, live, noInline, render }) => {
     const language = className.replace(/language-/, '');
+
 
     if (live) {
         return (
@@ -23,6 +24,7 @@ const ReactLiveEditor = ({ children, className, live, render }) => {
                     code={children.trim()}
                     transformCode={code => '/** @jsx mdx */' + code}
                     scope={{ mdx }}
+                    noInline={noInline}
                 >
                     <div
                         style={{
@@ -76,5 +78,9 @@ const ReactLiveEditor = ({ children, className, live, render }) => {
         </Highlight>
     );
 };
+
+ReactLiveEditor.defaultProps = {
+    noInline: false
+  };
 
 export default ReactLiveEditor;
