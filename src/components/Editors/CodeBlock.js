@@ -15,6 +15,7 @@ const ReactLiveEditor = ({ children, className, live, noInline, render }) => {
                 style={{
                     backgroundColor: 'black',
                     marginTop: '40px',
+                    marginBottom: '40px',
                     display: 'flex',
                     alignItems: 'stretch',
                     flexDirection: 'column'
@@ -54,8 +55,8 @@ const ReactLiveEditor = ({ children, className, live, noInline, render }) => {
 
     if (render) {
         return (
-            <div style={{ marginTop: '40px' }}>
-                <LiveProvider code={children}>
+            <div style={{ marginTop: '40px', backgroundColor: "white", color: "black" }}>
+                <LiveProvider code={children} noInline={noInline}>
                     <LivePreview />
                 </LiveProvider>
             </div>
@@ -80,7 +81,9 @@ const ReactLiveEditor = ({ children, className, live, noInline, render }) => {
 };
 
 ReactLiveEditor.defaultProps = {
-    noInline: false
+    noInline: false,
+    live: false,
+    render: false
   };
 
 export default ReactLiveEditor;
