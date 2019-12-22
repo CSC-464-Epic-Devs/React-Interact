@@ -56,7 +56,11 @@ const ReactLiveEditor = ({ children, className, live, noInline, render }) => {
     if (render) {
         return (
             <div style={{ marginTop: '40px', backgroundColor: "white", color: "black" }}>
-                <LiveProvider code={children} noInline={noInline}>
+                <LiveProvider 
+                    code={children.trim()}
+                    transformCode={code => '/** @jsx mdx */' + code}
+                    scope={{ mdx }}
+                    noInline={noInline}>
                     <LivePreview />
                 </LiveProvider>
             </div>
