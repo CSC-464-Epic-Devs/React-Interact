@@ -176,4 +176,30 @@ render(
 We provided no showAs prop, so it is given "bold" by default.
 
 
+## Props and the Spread Operator
+
+The js **...** operator can be used to assign props to components
+
+```javascript live=true noInline=true
+myProps = {
+  id: 7,
+  name: "Team Fortress 2",
+  characters: ["Scout", "Spy", "Docter"]
+}
+
+function DisplayGame(props) {
+    return (<div><p>{JSON.stringify(props)}</p>
+      <p><b>id:</b> {props.id}</p>
+      <p><b>name:</b> {props.name}</p>
+      <p><b>characters:</b> {props.characters.join(', ')}</p>
+    </div>)
+} 
+
+
+render(
+  <DisplayGame  {...myProps}/>
+)
+```
+
+
 <PrevNextNav next="/tutorials/react/state" home="/tutorials/react/" prev="/tutorials/react/components" />
