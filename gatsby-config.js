@@ -2,6 +2,7 @@ module.exports = {
   pathPrefix: 'React-Interact/',
   siteMetadata: {
     title: 'React-Interact',
+    siteUrl: `https://github.com/CSC-464-Regular-Devs/`,
     description:
       'Tutorial website devoted to encouraging aspiring developers to use the react framework',
     author: 'Regular Developers'
