@@ -1,18 +1,20 @@
 import React from "react";
 import "./styles/highLightLink.css";
-import { Link } from 'gatsby';
+import { Link } from "gatsby";
 
 function HighLightLink(props) {
+  if (props.href === null) {
+    return <></>;
+  }
 
   /* If it is an internal link: use gatsby Link */
   if (props.href.charAt(0) == "/") {
-  return (
-    <Link to={props.href} className="highLightLink" {...props}>
-      {props.children}
-    </Link>
-  );
-  }
-  else {
+    return (
+      <Link to={props.href} className="highLightLink" {...props}>
+        {props.children}
+      </Link>
+    );
+  } else {
     return (
       <a href={props.href} className="highLightLink" {...props}>
         {props.children}
