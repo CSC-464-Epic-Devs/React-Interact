@@ -91,9 +91,54 @@ class DisplayUsers extends React.Component {
     super();
     this.state = { users: [] };
   }
-
   componentDidMount() {
     fetch("/datasets/Users15.json")
+      .then(res => res.json())
+      .then(res => this.setState({ users: res.Users }));
+  }
+
+```javascript live=true noInline=true
+function ShowName(props) {
+    switch(props.showAs) {
+    case "bold":
+      return <b>{props.name}</b>
+      break;
+    case "italic":
+      return <i>{props.name}</i>
+      break;
+    default:
+      return <p>unknown style: bold or italic</p>
+    }
+} 
+
+const DisplayName = (props) => (
+      <div>
+        <ShowName name={props.name} showAs={props.showAs} />
+      </div>
+);
+
+render(
+  <DisplayName name="Attack on Titan" showAs="bold" />
+)
+```
+
+## Mapping Data With Props
+
+Our site provides dummy data sets. For our next example we will be using [/datasets/Users15.json](/datasets/Users15.json)
+
+```javascript live=true noInline=true
+const MakeNameBold = (props) => (
+  <b>hi</b>
+);
+
+class DisplayUsers extends React.Component {
+  constructor() {
+    super()
+    this.state = { users: [] }
+  }
+
+  componentDidMount() {
+    fetch('/datasets/Users15.json')
       .then(res => res.json())
       .then(res => this.setState({ users: res.Users }));
   }
@@ -149,6 +194,29 @@ render(<DisplayName name="Attack on Titan" />);
 We provided no showAs prop, so it is given "bold" by default.
 
 ## Props and the Spread Operator
+
+The js **...** operator can be used to assign props to components
+
+```javascript live=true noInline=true
+myProps = {
+  id: 7,
+  name: "Team Fortress 2",
+  characters: ["Scout", "Spy", "Docter"]
+}
+
+function DisplayGame(props) {
+    return (<div><p>{JSON.stringify(props)}</p>
+      <p><b>id:</b> {props.id}</p>
+      <p><b>name:</b> {props.name}</p>
+      <p><b>characters:</b> {props.characters.join(', ')}</p>
+    </div>)
+} 
+
+
+render(
+  <DisplayGame  {...myProps}/>
+)
+```
 
 The js **...** operator can be used to assign props to components
 
