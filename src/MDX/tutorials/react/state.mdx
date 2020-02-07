@@ -2,12 +2,11 @@
 title: React State
 date: 2019-12-07
 theme: react
+next: /projects/react/counterapp
+prev: /tutorials/react/props
 ---
 
 import PrevNextNav from "components/prevNextNav";
-
-
-# React State
 
 React follows the [MVC](https://www.geeksforgeeks.org/mvc-design-pattern/) - (Model View Controller) design pattern.
 
@@ -36,28 +35,24 @@ We can make a member function that will handle this click, but first we must bin
 
 ```js live=true
 class Toggle extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            on: false
-        };
-        this.handleClick = this.handleClick.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    handleClick() {
-        this.setState({on: !this.state.on})
-    }
+  handleClick() {
+    this.setState({ on: !this.state.on });
+  }
 
-    render() {
-        return <button onClick={this.handleClick}>{this.state.on.toString()}</button>
-    }
+  render() {
+    return (
+      <button onClick={this.handleClick}>{this.state.on.toString()}</button>
+    );
+  }
 }
 ```
 
 Alright, so our button will call our handleClick function, and then what happens is it sets on to the opposite value of on toggling it.
-
-
-
-<br/><br/>
-
-<PrevNextNav next="/projects/react/counterapp" home="/tutorials/react/" prev="/tutorials/react/props" />

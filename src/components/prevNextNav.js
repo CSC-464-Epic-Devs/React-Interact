@@ -1,23 +1,26 @@
-import React from 'react';
-import Box from '@material-ui/core/Box';
-import HighLightLink from 'components/highLightLink';
+import React from "react";
+import HighLightLink from "components/highLightLink";
 
 function PrevNextNav(props) {
-    return (
-    <Box {...props}>
-        <HighLightLink href={props.next} style={{float: "right", width:"33.33%", textAlign:"center"}}>
-            Next
-        </HighLightLink>
+  const checkFor = ["prev", "home", "next"];
+  const displayAs = { prev: "previous", home: "home", next: "next" };
 
-        <HighLightLink href={props.home}  style={{float: "right", width:"33.33%", textAlign:"center"}}>
-            Home
-        </HighLightLink>
-
-        <HighLightLink href={props.prev}  style={{float: "left", width:"33.33%", textAlign:"center"}}>
-            Previous
-        </HighLightLink>
-    </Box>
-    );
+  return (
+    <div {...props} style={{ display: "flex" }}>
+      {checkFor.map(p =>
+        p in props ? (
+          <HighLightLink
+            style={{ flexGrow: 1, textAlign: "center" }}
+            href={props[p]}
+          >
+            {displayAs[p]}
+          </HighLightLink>
+        ) : (
+          <></>
+        )
+      )}
+    </div>
+  );
 }
 
 export default PrevNextNav;
