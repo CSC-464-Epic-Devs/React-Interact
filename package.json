@@ -10,6 +10,7 @@
     "@material-ui/styles": "^4.6.0",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "@stewartmcgown/grammarly-api": "^1.1.2",
     "@theme-ui/prism": "^0.2.46",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint-plugin-node": "^10.0.0",
