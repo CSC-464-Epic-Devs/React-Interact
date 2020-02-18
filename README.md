@@ -1,5 +1,7 @@
 # React Interact
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/CSC-464-Regular-Devs/React-Interact.svg)](https://greenkeeper.io/)
+
 React Interact is a tutorial website to ease the burdon of learning React and other web technologies.
 
 ## Using the site
