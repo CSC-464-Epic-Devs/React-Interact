@@ -2,6 +2,7 @@ module.exports = {
   pathPrefix: 'React-Interact/',
   siteMetadata: {
     title: 'React-Interact',
+    siteUrl: `https://github.com/CSC-464-Regular-Devs/`,
     description:
       'Tutorial website devoted to encouraging aspiring developers to use the react framework',
     author: 'Regular Developers'
@@ -53,9 +54,10 @@ module.exports = {
       }
     },
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-catch-links'
+    'gatsby-plugin-catch-links',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`
   ]
 };

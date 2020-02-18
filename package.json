@@ -27,6 +27,7 @@
     "gatsby-plugin-page-creator": "^2.1.31",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-plugin-sitemap": "^2.2.24",
     "gatsby-plugin-styled-components": "^3.1.12",
     "gatsby-remark-code-repls": "^3.0.18",
     "gatsby-remark-embedded-codesandbox": "^1.2.0",
