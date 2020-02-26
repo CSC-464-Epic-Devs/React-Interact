@@ -65,6 +65,6 @@ theme is used to determine the color scheme for the page.
 Once our markdown example file is created, run "gatsby develop" or "npm run-script develop"
 The page will now be located at [http://localhost:8000/tutorials/helloworld/](http://localhost:8000/tutorials/helloworld/)
 
-Note: use of the <a> tag is not allowable. Since our project is on github pages a url prefix is required that is defined in gatsby-config. Either use a markdown link or the gatsby <Link> tag for generating links. \
+Note: use of the <a> tag is not allowable. Since our project is on github pages a url prefix is required that is defined in gatsby-config. Either use a markdown link or the gatsby <Link> tag for generating links.
  
 When your content is ready a pull request can be made. Once reviewed and accepted it will go into develop to be merge in with changed made by additional users.
