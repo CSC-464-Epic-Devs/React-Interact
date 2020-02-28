@@ -1,129 +1,136 @@
 ---
 title: Components
-date: 2019-12-06
+date: 2020-02-28
 theme: React
 next: /tutorials/react/props
 prev: /tutorials/react/jsx
 ---
 
-Components are independent and reusable bits of code.
-They serve the same purpose as JavaScript functions,
-but work in isolation and returns HTML via a render function.
+# React Components
 
-Conceptually, components are like JavaScript functions.
-They accept arbitrary inputs (called “props”) and
-return React elements describing what should appear on the screen.
+Components in react are reusable bits of code. You can think of a component as a function that returns a piece of the UI.
+They can be used to break apart a problem, and as a thing that you can write once and use again later.
 
-#### In ReactJS, we have mainly two types of components. They are :
+We are going to start with two types of components: **class** and **functional**.
 
-# Functional Components
+## Funciton Components
 
-In React, function components are a way to write components
-that only contain a render method and don't have their own state.
-They are simply JavaScript functions that may or may not receive data as parameters.
-We can create a function that takes props(properties) as input and returns
-what should be rendered.
-A valid functional component can be shown in the below example.
+In the following example, we define a function called BigText, is has no parameters, and all it does is return some jsx.
+This is a valid component.
 
-```js
-function WelcomeMessage(props) {
-  return <h1>Welcome to the , {props.name}</h1>;
+```js live=true
+function BigText() {
+  return <h1>BIG TEXT</h1>;
 }
 ```
 
-# Class Components
+## Class Component
 
-Class components are more complex than functional components.
-It requires you to extend from React's Component class and create a render
-function which returns a React element. You can pass data from one class
-to other class components. You can create a class by defining a class that
-extends Component and has a render function.
-Here is an example of a basic class component
+React components can be done as classes like such,
 
-```js
-class MyComponent extends React.Component {
+```js live=true
+class BasicComponent extends React.Component {
   render() {
-    return <div>This is main component.</div>;
+    return <h2>Component results in h2</h2>;
   }
 }
 ```
 
-# Rendering a Component
+Notice how when we are extending **React.Component**, we need to define a **render** function; however, when we are just doing it functionally,
+we can just return the jsx. We will get more into the advantages and disadvantages in the following tutorials.
 
-Elements can also represent user-defined components:
+## Component Composition
 
-```js
-const element = <Welcome name="Sara" />;
-```
+One of the primary purposes of components is in their composition.
 
-When React sees an element representing a user-defined component,
-it passes JSX attributes to this component as a single object. We call this object “props”.
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/tZZv5Z2Iz_s"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
-For example, this code renders “Hello, Sara” on the page:
+While every component is independent, they can be combined to make something greater.
 
-```js
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
+```js live=true noInline=true
+const Header = () => {
+  return <h2>Header</h2>;
+};
 
-const element = <Welcome name="Sara" />;
-ReactDOM.render(element, document.getElementById("root"));
-```
+const Body = () => {
+  return (
+    <p>
+      Lorem ipsum dolor sit amet, falli blandit qualisque ei eam. Ne erant
+      salutatus forensibus vis.
+    </p>
+  );
+};
 
-# Reusing Components
+const Footer = () => {
+  return <h3>Footer</h3>;
+};
 
-Components can use other available components.
-
-For example, we can create an App component that renders Welcome many times:
-
-```js
-
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
-
-function App() {
+const App = () => {
   return (
     <div>
-      <Welcome name="Sara" />
-      <Welcome name="Cahal" />
-      <Welcome name="Edite" />
+      <Header />
+      <Body />
+      <Footer />
     </div>
   );
-}
-);
+};
+
+render(<App />);
 ```
 
-In this example, we reuse the **Welcome** functional component and provide it a
-string value for the prop _name_. Each **Welcome** component uses takes their
-respective prop and outputs them as defined.
+Notice how components here are getting broken down into jsx as primitives. A component must return
+a single element (that is why we wrap the return in a div primitive), but you can feed the div any mix
+of components that you would like.
 
-# Component Constructor
+## Higher Order Components
 
-If there is a constructor() function in your component,
-this function will be called when the component gets initiated.
+In javascript you can create higher order function like below,
 
-The constructor function is where you initiate the component's properties.
-
-In React, component properties should be kept in an object called state.
-
-You will learn more about state later in this tutorial.
-
-The constructor function is also where you honor the inheritance of the parent
-component by including the super() statement,
-which executes the parent component's constructor function,
-and your component has access to all the functions
-of the parent component (React.Component).
-
-```React live = true
-class Shirt extends React.Component {
-  constructor() {
-    super();
-    this.state = { color: "blue" };
-  }
-  render() {
-    return <h2>Thank you for buying {this.state.color}  Shirt!</h2>;
-  }
-
+```js
+function multiply(x, y) {
+  return x * y;
 }
+
+function mulByFive(x, multiplyRef) {
+  return multiply(x, 5);
+}
+
+mulByFive(5);
+```
+
+**Output**
+
+```react
+25
+```
+
+Higher order components apply the same idea but to react components.
+
+```js live=true noInline=true
+function BigText() {
+  return <h1>BIG TEXT</h1>;
+}
+
+function MakeItItalicToo(OtherComponent) {
+  return class extends React.Component {
+    render() {
+      return (
+        <i>
+          <OtherComponent />
+        </i>
+      );
+    }
+  };
+}
+
+const MakeBigTextItalic = MakeItItalicToo(BigText);
+
+render(<MakeBigTextItalic />);
 ```
