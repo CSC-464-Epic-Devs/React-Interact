@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import BookBackground from "components/BackgroundImages/tutorials/BookBackground";
-import HTMLBackgorund from "components/BackgroundImages/tutorials/HTMLBackground";
-import CSSBackgorund from "components/BackgroundImages/tutorials/CSSBackground";
-import JSBackgorund from "components/BackgroundImages/tutorials/JSBackground";
-import ReactBackgorund from "components/BackgroundImages/tutorials/ReactBackground";
-import Layout from 'components/layout';
+import BookBackground from "components/BookBackground";
+import HTMLBackgorund from "components/HTMLBackground";
+import CSSBackgorund from "components/CSSBackground";
+import JSBackgorund from "components/JSBackground";
+import ReactBackgorund from "components/ReactBackground";
+import Layout from 'components/Layout';
 
 
 const TutorialsPage = () => (

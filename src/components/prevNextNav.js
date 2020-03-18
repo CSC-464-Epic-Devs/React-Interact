@@ -1,5 +1,5 @@
 import React from "react";
-import HighLightLink from "components/highLightLink";
+import HighLightLink from "components/HighlightLink";
 
 function PrevNextNav(props) {
   const checkFor = ["prev", "home", "next"];

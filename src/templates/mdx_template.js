@@ -1,16 +1,16 @@
 import React from "react";
 
-import Layout from "components/layout";
+import Layout from "components/Layout";
 
 import { graphql } from "gatsby";
 
-import CodeBlock from "components/Editors/CodeBlock";
+import CodeBlock from "components/CodeBlock";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import SEO from "components/seo";
+import SEO from "components/SEO";
 import Content from "components/ContentBanner";
-import HyperLink from "components/highLightLink";
-import PrevNextNav from "components/prevNextNav";
+import HyperLink from "components/HighlightLink";
+import PrevNextNav from "components/PrevNextNav";
 
 /* eslint-disable */
 const components = {

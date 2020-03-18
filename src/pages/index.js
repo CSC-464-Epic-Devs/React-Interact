@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { Link } from 'gatsby';
-import Layout from 'components/layout';
-import CodeBackground from 'components/BackgroundImages/CodeBackground';
-import FogBackground from 'components/BackgroundImages/FogBackground';
-import BlurBackground from 'components/BackgroundImages/BlurBackground';
-import Dustin from 'components/Images/Dustin';
-import Adesh from 'components/Images/Adesh';
-import Yuki from 'components/Images/Yuki';
-import Mengesh from 'components/Images/Mengesh';
-import SEO from 'components/seo';
-import Logo from 'components/Images/logo';
+import Layout from 'components/Layout';
+import CodeBackground from 'components/CodeBackground';
+import FogBackground from 'components/FogBackground';
+import BlurBackground from 'components/BlurBackground';
+import Dustin from 'components/Dustin';
+import Adesh from 'components/Adesh';
+import Yuki from 'components/Yuki';
+import Mengesh from 'components/Mengesh';
+import SEO from 'components/SEO';
+import Logo from 'components/Logo';
 import ContentBanner from 'components/ContentBanner';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';

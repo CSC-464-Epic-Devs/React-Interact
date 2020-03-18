@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/highLightLink.css";
 import { Link } from "gatsby";
 
-function HighLightLink(props) {
+function HighlightLink(props) {
   if (props.href === null) {
     return <></>;
   }
@@ -23,4 +23,4 @@ function HighLightLink(props) {
   }
 }
 
-export default HighLightLink;
+export default HighlightLink;

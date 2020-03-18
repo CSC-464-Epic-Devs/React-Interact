@@ -1,8 +1,8 @@
 import React from "react";
-import SEO from "components/seo";
+import SEO from "components/SEO";
 import { graphql, Link } from "gatsby";
 
-import Layout from "components/layout";
+import Layout from "components/Layout";
 
 function sitemap({ data }) {
   const pages = data.allSitePage.edges.map(page => (
