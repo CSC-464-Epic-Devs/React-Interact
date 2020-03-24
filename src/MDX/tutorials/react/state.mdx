@@ -1,12 +1,10 @@
 ---
 title: React State
-date: 2019-12-07
+date: 2020-03-24
 theme: react
 next: /projects/react/counterapp
 prev: /tutorials/react/props
 ---
-
-import PrevNextNav from "components/prevNextNav";
 
 React follows the [MVC](https://www.geeksforgeeks.org/mvc-design-pattern/) - (Model View Controller) design pattern.
 
@@ -56,3 +54,81 @@ class Toggle extends React.Component {
 ```
 
 Alright, so our button will call our handleClick function, and then what happens is it sets on to the opposite value of on toggling it.
+
+## React Hooks are the future
+
+React hooks were introduced in React 16.8 and quickly became the go-to way to develop for react.
+They allow you to handle react state without a class, and this helps to create pure code.
+
+### useState
+
+Let's rewrite our toggle component using react hooks.
+
+First you need access to the hook functions:
+
+```js
+import { useState } from react;
+```
+
+Then in your components you can handle state as such:
+
+```js live=True
+function Toggle() {
+  const [on, setOn] = useState(false);
+
+  return (
+    <button onClick={() => setOn(prevOn => !prevOn)}>{on.toString()}</button>
+  );
+}
+```
+
+Looks much nicer.
+
+Let's take a closer look here:
+
+```js
+const [on, setOn] = useState(false);
+```
+
+We have a variable on, and a function that is 'hooked' to it.
+The parameter that `useState` takes is what to initialize our state variable `on` to.
+Notice that we pass it a arrow function, setOn will take this arrow function and pass it the previous version of `on`, letting us decide what we want to do with it.
+
+### Partially updating state
+
+useState does not automatically merge the previous state object with the new state object,
+
+for example consider this snippet:
+
+```js live=True
+function Person() {
+  const [person, setPersonDetails] = useState({
+    height: 10,
+    age: 25,
+    eyes: "brown"
+  });
+
+  return (
+    <>
+      <p>{JSON.stringify(person)}</p>
+      <button onClick={() => setPersonDetails(oldState => ({ height: 15 }))}>
+        click me
+      </button>
+    </>
+  );
+}
+```
+
+You can correct this using the spread operator!
+
+```js
+return { ...oldstate, height: 15 };
+```
+
+If you needed to update several parts of your state object, you would do this:
+
+```js
+return { ...oldstate, ...newState };
+```
+
+You want the newState to the right of the oldState because the right side will overwrite the left.
