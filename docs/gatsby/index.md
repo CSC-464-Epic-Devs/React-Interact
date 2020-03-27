@@ -1,5 +1,5 @@
 # Gatsby
 
 ### Learn about Gatsby Configuration
-   -[gatsby-config](gatsby-config.md)
-   -[gatsby-node](gatsby-node.md)
+   - [gatsby-config](gatsby-config.md)<br>
+   - [gatsby-node](gatsby-node.md)
