@@ -11,6 +11,7 @@ import SEO from "components/seo";
 import Content from "components/ContentBanner";
 import HyperLink from "components/highLightLink";
 import PrevNextNav from "components/prevNextNav";
+// eslint-disable-next-line no-unused-vars
 import MCQ from "components/mcq";
 
 /* eslint-disable */
