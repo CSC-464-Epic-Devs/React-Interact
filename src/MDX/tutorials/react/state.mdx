@@ -6,8 +6,6 @@ next: /projects/react/counterapp
 prev: /tutorials/react/props
 ---
 
-import PrevNextNav from "components/prevNextNav";
-
 React follows the [MVC](https://www.geeksforgeeks.org/mvc-design-pattern/) - (Model View Controller) design pattern.
 
 Consider the following code snippet:
@@ -27,7 +25,7 @@ class Toggle extends React.Component {
 }
 ```
 
-We have a React component called Toggle and it has a member variable called state which is a javascript object with one attribute: on, set to false by default.
+We have a React component called "Toggle" and it has a member variable called "state" which is a JavaScript object with one attribute: on, set to false by default.
 
 Notice we can access our components state inside the render function. However, it is not very useful to have a static state, so how do we change that?
 
@@ -55,4 +53,4 @@ class Toggle extends React.Component {
 }
 ```
 
-Alright, so our button will call our handleClick function, and then what happens is it sets on to the opposite value of on toggling it.
+Alright, so our button will call our handle Click function, and then what happens is it sets on to the opposite value of on toggling it.

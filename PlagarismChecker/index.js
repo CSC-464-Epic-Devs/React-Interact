@@ -5,36 +5,10 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/*
-const files = [
-  "counterapp.mdx",
-  "index.mdx",
-  "jsx.mdx",
-  "props_new.mdx",
-  "props_old.mdx",
-  "state.mdx"
-];*/
-
-/*export async function TestForPlagarism(files) {
-  var flaggedFiles = [];
-  for (const file of files) {
-    if (fs.existsSync(file)) {
-      const text = fs.readFileSync(file, "utf8");
-      const result = await g.plagiarism(text);
-      if (result.hasPlagiarism) {
-        flaggedFiles.push(file);
-      }
-      await sleep(1000);
-    }
-  }
-
-  return { flaggedFiles: flaggedFiles };
-}*/
-
-async function f() {
+async function check_for_plagarism() {
   var flaggedFiles = [];
   var files = process.argv.slice(2);
-  console.log("Changed Content Files");
+  console.log("Checking Files for plagarism:");
   console.log(files);
   for (const file of files) {
     if (fs.existsSync(file)) {
@@ -54,4 +28,4 @@ async function f() {
   return 0;
 }
 
-f();
+check_for_plagarism();
