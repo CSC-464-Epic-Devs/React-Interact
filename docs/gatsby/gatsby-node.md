@@ -24,4 +24,4 @@ MDX files. Then for each node(MDX file) we call [createPage](https://www.gatsbyj
 [createPages Docs](https://www.gatsbyjs.org/docs/node-apis/#createPages)
 
 ### Learn more about gatsby-node
- - [Oficial Gatsby Node Docs](https://www.gatsbyjs.org/docs/node-apis/)
+ - [Official Gatsby Node Docs](https://www.gatsbyjs.org/docs/node-apis/)
