@@ -7,6 +7,8 @@ prev: /tutorials/react/props
 ---
 
 import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
 
 React follows the [MVC](https://www.geeksforgeeks.org/mvc-design-pattern/) - (Model View Controller) design pattern.
 
@@ -73,13 +75,13 @@ Alright, so our button will call our handle Click function, and then what happen
   op4="Highlights State"
   desc="Solution2: Updates State"
 />
-<MCQ
+<Truefalse
   qs="Does the component render again on changing state ?"
   op1="Yes"
   op2="No"
   desc="Solution2: Yes"
 />
-<MCQ
+<Threechoicemcq
   qs="Max limit of the no of properties of a state can have?"
   op1="100"
   op2="200"

@@ -6,6 +6,10 @@ next: /tutorials/react/state
 prev: /tutorials/react/components
 ---
 
+import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
+
 ## Intro
 
 React props are read-only data that gets passed to the react component.
@@ -178,3 +182,39 @@ function DisplayGame(props) {
 
 render(<DisplayGame {...myProps} />);
 ```
+
+<MCQ
+  qs="How would you access Props inside a Component? (Rooms is an Attribute to some element)"
+  op1="props.rooms"
+  op2="props.getRooms()"
+  op3="SomeArray[] = this.props"
+  op4="this.props.rooms"
+  desc="Solution: this.props.rooms"
+/>
+<Threechoicemcq
+  qs="How do you pass Props to Components?"
+  op1="using HTML DOM elements"
+  op2="as function arguments"
+  op3="Object Reference"
+  desc="Solution: as function arguments"
+/>
+<Threechoicemcq
+  qs="How would you pass Props to a Component if you had a constructor? (Rooms is an Attribute to some element)"
+  op1="super(props)"
+  op2="this.rooms = props.rooms"
+  op3="const room = this.props{rooms: ”2”}"
+  desc="Solution: super(props)"
+/>
+<Truefalse
+  qs="Props are Immutable"
+  op1="True"
+  op2="False"
+  desc="Solution: True"
+/>
+<Threechoicemcq
+  qs="How do you use Default Props?"
+  op1="Adding to reactDom.render()"
+  op2="Setting the properties inside Component Constructor"
+  op3="It is set directly during run-time"
+  desc="Solution: Setting the properties inside Component Constructor"
+/>
