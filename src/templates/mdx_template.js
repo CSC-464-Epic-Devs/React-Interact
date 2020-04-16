@@ -13,14 +13,14 @@ import HyperLink from "components/highLightLink";
 import PrevNextNav from "components/prevNextNav";
 // eslint-disable-next-line no-unused-vars
 import MCQ from "components/mcq";
-import Truefalse from "components/truefalse";
-import Threechoicemcq from "components/threechoicemcq";
+//import Truefalse from "components/truefalse";
+//import Threechoicemcq from "components/threechoicemcq";
 
 /* eslint-disable */
 const components = {
-  pre: props => <div {...props} />,
+  pre: (props) => <div {...props} />,
   code: CodeBlock,
-  a: HyperLink
+  a: HyperLink,
 };
 /* eslint-enable */
 
