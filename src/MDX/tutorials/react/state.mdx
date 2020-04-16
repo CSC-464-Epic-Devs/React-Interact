@@ -19,7 +19,7 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      on: false
+      on: false,
     };
   }
 
@@ -40,7 +40,7 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      on: false
+      on: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -73,20 +73,20 @@ Alright, so our button will call our handle Click function, and then what happen
   op2="Updates State"
   op3="Removes State"
   op4="Highlights State"
-  desc="Solution2: Updates State"
+  desc="Solution: Updates State"
 />
 <Truefalse
   qs="Does the component render again on changing state ?"
   op1="Yes"
   op2="No"
-  desc="Solution2: Yes"
+  desc="Solution: Yes"
 />
 <Threechoicemcq
   qs="Max limit of the no of properties of a state can have?"
   op1="100"
   op2="200"
   op3="No Limit"
-  desc="Solution2: No Limit"
+  desc="Solution: No Limit"
 />
 <MCQ
   qs="Why state doesn’t update immediately upon changing and instead re-renders all over again?"
@@ -94,5 +94,5 @@ Alright, so our button will call our handle Click function, and then what happen
   op2="Props and State can be messed up making it harder to debug the error"
   op3="State will time out"
   op4="State will wait unnecessarily for other components to render synchronously. "
-  desc="Solution2: Both A) and B) are correct"
+  desc="Solution: Both A) and B) are correct"
 />
