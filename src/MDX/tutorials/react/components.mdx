@@ -6,6 +6,10 @@ next: /tutorials/react/props
 prev: /tutorials/react/jsx
 ---
 
+import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
+
 # React Components
 
 Components in react are reusable bits of code. You can think of a component as a function that returns a piece of the UI.
@@ -134,3 +138,45 @@ const MakeBigTextItalic = MakeItItalicToo(BigText);
 
 render(<MakeBigTextItalic />);
 ```
+
+## Assessments
+
+### You will have to answer a bunch of questions
+
+<Truefalse
+  qs="In simple terms Components are like Javascript Functions."
+  op1="True"
+  op2="False"
+  desc="Solution: True"
+/>
+<MCQ
+  qs="Which is a false statement about Components?(There’s only one false statement)"
+  op1="Components can be re-used"
+  op2="Components are independent from each other"
+  op3="Class Component may or may not have a render function"
+  op4="The name is required to start with uppercase alphabet"
+  desc="Solution: False : Class Component may or may not have a render function"
+/>
+<Threechoicemcq
+  qs="Where do you initialize the properties of a component?"
+  op1="Inside a render function"
+  op2="Using any html tag"
+  op3="Inside a constructor"
+  desc="Solution: Inside a constructor"
+/>
+<MCQ
+  qs="Which statement is false about Functional Components?"
+  op1="Advised to be used more often due to it’s predictability"
+  op2="They are stateless"
+  op3="They output UI elements"
+  op4="None"
+  desc="Solution: None"
+/>
+<MCQ
+  qs="Which statement is false about Class Components?"
+  op1="There are no events associated"
+  op2="They manage state "
+  op3="They may contain other components( nested components)"
+  op4="They may contain lifecycle methods"
+  desc="Solution: False : There are no events associated"
+/>

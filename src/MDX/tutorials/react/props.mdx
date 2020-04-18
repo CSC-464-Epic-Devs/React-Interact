@@ -6,6 +6,10 @@ next: /tutorials/react/state
 prev: /tutorials/react/components
 ---
 
+import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
+
 ## Intro
 
 React props are read-only data that gets passed to the react component.
@@ -13,7 +17,7 @@ React props are read-only data that gets passed to the react component.
 Consider the following snippet:
 
 ```javascript
-const MakeNameBold = props => <b>{props.name}</b>;
+const MakeNameBold = (props) => <b>{props.name}</b>;
 ```
 
 We have a component that takes whatever props.name is and it returns it bold.
@@ -21,9 +25,9 @@ We have a component that takes whatever props.name is and it returns it bold.
 The component could be used like this:
 
 ```javascript noInline=true
-const MakeNameBold = props => <b>{props.name}</b>;
+const MakeNameBold = (props) => <b>{props.name}</b>;
 
-const DisplayName = props => (
+const DisplayName = (props) => (
   <div>
     <MakeNameBold name={props.name} />
   </div>
@@ -35,9 +39,9 @@ render(<DisplayName name="Bacon Cheese and Garlic" />);
 **Result: **
 
 ```javascript render=true noInline=true
-const MakeNameBold = props => <b>{props.name}</b>;
+const MakeNameBold = (props) => <b>{props.name}</b>;
 
-const DisplayName = props => (
+const DisplayName = (props) => (
   <div>
     <MakeNameBold name={props.name} />
   </div>
@@ -70,7 +74,7 @@ function ShowName(props) {
   }
 }
 
-const DisplayName = props => (
+const DisplayName = (props) => (
   <div>
     <ShowName name={props.name} showAs={props.showAs} />
   </div>
@@ -84,7 +88,7 @@ render(<DisplayName name="Attack on Titan" showAs="bold" />);
 Our site provides dummy data sets. For our next example we will be using [/datasets/Users15.json](/datasets/Users15.json)
 
 ```javascript live=true noInline=true
-const MakeNameBold = props => <b>hi</b>;
+const MakeNameBold = (props) => <b>hi</b>;
 
 class DisplayUsers extends React.Component {
   constructor() {
@@ -94,12 +98,12 @@ class DisplayUsers extends React.Component {
 
   componentDidMount() {
     fetch("/datasets/Users15.json")
-      .then(res => res.json())
-      .then(res => this.setState({ users: res.Users }));
+      .then((res) => res.json())
+      .then((res) => this.setState({ users: res.Users }));
   }
 
   render() {
-    const listItems = this.state.users.map(user => (
+    const listItems = this.state.users.map((user) => (
       <li key={user.id}>{user.name}</li>
     ));
 
@@ -132,7 +136,7 @@ function ShowName(props) {
   }
 }
 
-const DisplayName = props => (
+const DisplayName = (props) => (
   <div>
     <ShowName name={props.name} showAs={props.showAs} />
   </div>
@@ -140,7 +144,7 @@ const DisplayName = props => (
 
 DisplayName.defaultProps = {
   name: "Unassigned",
-  showAs: "bold"
+  showAs: "bold",
 };
 
 render(<DisplayName name="Attack on Titan" />);
@@ -156,7 +160,7 @@ The js **...** operator can be used to assign props to components
 myProps = {
   id: 7,
   name: "Team Fortress 2",
-  characters: ["Scout", "Spy", "Docter"]
+  characters: ["Scout", "Spy", "Docter"],
 };
 
 function DisplayGame(props) {
@@ -178,3 +182,43 @@ function DisplayGame(props) {
 
 render(<DisplayGame {...myProps} />);
 ```
+
+## Assessments
+
+### You will have to answer a bunch of questions
+
+<MCQ
+  qs="How would you access Props inside a Component? (Rooms is an Attribute to some element)"
+  op1="props.rooms"
+  op2="props.getRooms()"
+  op3="SomeArray[] = this.props"
+  op4="this.props.rooms"
+  desc="Solution: this.props.rooms"
+/>
+<Threechoicemcq
+  qs="How do you pass Props to Components?"
+  op1="using HTML DOM elements"
+  op2="as function arguments"
+  op3="Object Reference"
+  desc="Solution: as function arguments"
+/>
+<Threechoicemcq
+  qs="How would you pass Props to a Component if you had a constructor? (Rooms is an Attribute to some element)"
+  op1="super(props)"
+  op2="this.rooms = props.rooms"
+  op3="const room = this.props{rooms: ”2”}"
+  desc="Solution: super(props)"
+/>
+<Truefalse
+  qs="Props are Immutable"
+  op1="True"
+  op2="False"
+  desc="Solution: True"
+/>
+<Threechoicemcq
+  qs="How do you use Default Props?"
+  op1="Adding to reactDom.render()"
+  op2="Setting the properties inside Component Constructor"
+  op3="It is set directly during run-time"
+  desc="Solution: Setting the properties inside Component Constructor"
+/>

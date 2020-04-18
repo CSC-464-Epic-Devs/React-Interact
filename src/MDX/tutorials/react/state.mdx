@@ -6,6 +6,10 @@ next: /projects/react/counterapp
 prev: /tutorials/react/props
 ---
 
+import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
+
 React follows the [MVC](https://www.geeksforgeeks.org/mvc-design-pattern/) - (Model View Controller) design pattern.
 
 Consider the following code snippet:
@@ -15,7 +19,7 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      on: false
+      on: false,
     };
   }
 
@@ -36,7 +40,7 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      on: false
+      on: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -54,3 +58,45 @@ class Toggle extends React.Component {
 ```
 
 Alright, so our button will call our handle Click function, and then what happens is it sets on to the opposite value of on toggling it.
+
+## Assessments
+
+### You will have to answer a bunch of questions
+
+<MCQ
+  qs="Suppose you were trying to change the component state from a function. How would you do it ?"
+  op1="return State"
+  op2="state.somefunc()"
+  op3="this.state()"
+  op4="this.state = "
+  desc="Solution: this.state"
+/>
+<MCQ
+  qs="What is the purpose of setState() ?"
+  op1="Initializes state"
+  op2="Updates State"
+  op3="Removes State"
+  op4="Highlights State"
+  desc="Solution: Updates State"
+/>
+<Truefalse
+  qs="Does the component render again on changing state ?"
+  op1="Yes"
+  op2="No"
+  desc="Solution: Yes"
+/>
+<Threechoicemcq
+  qs="Max limit of the no of properties of a state can have?"
+  op1="100"
+  op2="200"
+  op3="No Limit"
+  desc="Solution: No Limit"
+/>
+<MCQ
+  qs="Why state doesn’t update immediately upon changing and instead re-renders all over again?"
+  op1="New features can’t be implemented this way ?"
+  op2="Props and State can be messed up making it harder to debug the error"
+  op3="State will time out"
+  op4="State will wait unnecessarily for other components to render synchronously. "
+  desc="Solution: Both A) and B) are correct"
+/>

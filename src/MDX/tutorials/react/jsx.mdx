@@ -6,6 +6,10 @@ next: /tutorials/react/components
 prev: /tutorials/react/introduction
 ---
 
+import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
+
 ### Take a look at this code snippet:
 
 ```js
@@ -52,3 +56,41 @@ function Example() {
   );
 }
 ```
+
+## Assessments
+
+### You will have to answer a bunch of questions
+
+<Truefalse
+  qs="Can JSX tags contain children?"
+  op1="Yes"
+  op2="No"
+  desc="Solution: Yes"
+/>
+<Threechoicemcq
+  qs="How do you add javascript expressions inside JSX?"
+  op1="Using Curly braces"
+  op2="Function call to javascript function"
+  op3="Using Script Tag"
+  desc="Solution: Using Curly Braces"
+/>
+<Threechoicemcq
+  qs="JSX is faster than javascript functions. Why?"
+  op1="UI elements are type-safe"
+  op2="HTML is rendered faster"
+  op3="Optimization during compile time"
+  desc="Solution: Optimization during compile time"
+/>
+<Truefalse
+  qs="JSX converts HTML tags into react elements"
+  op1="True"
+  op2="False"
+  desc="Solution: True"
+/>
+<Threechoicemcq
+  qs="What is the correct way of embedding html inside JSX?"
+  op1="Create a const Element of html code and render the element using ReactDom"
+  op2="Html code is embedded directly inside the ReactDom.render()"
+  op3="A separate function call is needed to create HTML elements and attributes"
+  desc="Solution: Create a const Element of html code and render the element using ReactDom"
+/>
