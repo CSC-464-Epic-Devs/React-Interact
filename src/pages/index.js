@@ -10,7 +10,7 @@ import Adesh from 'components/Images/Adesh';
 import Yuki from 'components/Images/Yuki';
 import Mengesh from 'components/Images/Mengesh';
 import SEO from 'components/seo';
-import Logo from 'components/Images/logo';
+import Logo from 'components/Images/Logo';
 import ContentBanner from 'components/ContentBanner';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
