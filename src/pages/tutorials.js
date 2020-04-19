@@ -21,17 +21,10 @@ const TutorialsPage = () => (
         <div style={{backgroundColor:"rgba(255,255,255,0.7)", padding:"10px", borderRadius:"10px"}}>
           <h2>HTML</h2>
           <p>
-          Hypertext Markup Language (HTML) is the 
-          standard markup language for documents designed 
-          to be displayed in a web browser. It can be assisted 
-          by technologies such as Cascading Style Sheets (CSS) and 
-          scripting languages such as JavaScript.
+          Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.
+          It is typically assisted by CSS for styling and JavaScript for animations.
 
-          Web browsers receive HTML documents from a web 
-          server or from local storage and render the documents 
-          into multimedia web pages. HTML describes the structure 
-          of a web page semantically and originally included cues 
-          for the appearance of the document.
+          Web browser takes HTML documents from a web server or from local storage and render the documents into web pages.
 
           </p>
         </div>
@@ -45,10 +38,8 @@ const TutorialsPage = () => (
         <div style={{backgroundColor:"rgba(255,255,255,0.8)", padding:"10px", borderRadius:"10px"}}>
           <h2>CSS</h2>
           <p>
-          Cascading Style Sheets is a style sheet language used 
-          for describing the presentation of a document written in a 
-          markup language like HTML. CSS is a cornerstone technology of the 
-          World Wide Web, alongside HTML and JavaScript.
+          Cascading Style Sheets is a style sheet language used for styling a document written in a markup language like HTML. 
+          CSS is an important technology of the World Wide Web, alongside HTML and JavaScript.
           </p>
         </div>
         </div>
@@ -61,10 +52,10 @@ const TutorialsPage = () => (
         <div style={{backgroundColor:"rgba(0,0,0,0.7)", padding:"10px", borderRadius:"10px"}}>
             <h2>JavaScript</h2>
             <p>
-            JavaScript, often abbreviated as JS, is a high-level, 
-            interpreted scripting language. 
-            JavaScript has curly-bracket syntax, dynamic typing, 
-            prototype-based object-orientation, and first-class functions.
+            JavaScript (JS), is a high-level, interpreted scripting language. 
+            Javascript usually assists HTML by making webpages dynamic. Javascript has 
+            lot of frameworks which are widely used in front-end web development making it 
+            one of the fastest growning language in the world.
             </p>
           </div>
         </div>
