@@ -1,0 +1,35 @@
+---
+title: JSX
+date: 2019-12-06
+theme: default
+next: #
+prev: #
+---
+
+# React-Live noInLine test
+
+### Take a look at this code snippet:
+
+```react live=true noInline=true
+const Wrapper = ({ children }) => (
+  <div style={{
+    background: 'papayawhip',
+    width: '100%',
+    padding: '2rem'
+  }}>
+    {children}
+  </div>
+)
+
+const Title = () => (
+  <h3 style={{ color: 'palevioletred' }}>
+    Hello World!
+  </h3>
+)
+
+render(
+  <Wrapper>
+    <Title />
+  </Wrapper>
+)
+```

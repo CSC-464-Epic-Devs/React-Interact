@@ -2,14 +2,14 @@
 title: CounterApp Tutorial
 date: 2019-12-06
 theme: React
+next: #
+prev: /tutorials/react/state
 ---
 
 import { Component } from "react";
 import PrevNextNav from "components/prevNextNav";
 
-
-# React Counter App Tutorial 
-
+# React Counter App Tutorial
 
 Let’s build a simple counter button in React that will update every time it is clicked.
 
@@ -21,17 +21,13 @@ To start, create a new React app called counter using create-react-app.
 
 `$ npm start`
 
-
-
-Open your web browser to [http://localhost:3000/](http://localhost:3000/) to see the standard React welcome page. 
+Open your web browser to [http://localhost:3000/](http://localhost:3000/) to see the standard React welcome page.
 We only need to update the src/App.js file in this tutorial.
 
 ## Counter Component
 
-Now we need to create our Counter component. First we can add it to App. 
+Now we need to create our Counter component. First we can add it to App.
 Then create Counter and include a static button which will be set to 0.
-
-
 
 ```js
 // src/App.js
@@ -46,7 +42,6 @@ class App extends Component {
 }
 
 class Counter extends Component {
-
   render() {
     return <button>0</button>;
   }
@@ -57,17 +52,16 @@ export default App;
 
 If you go to http://localhost:3000/ you’ll see our static button now.
 
-
 ## Updating State
 
-it is much more readable–and performant–to move this outside of render() to its own method called handleClick 
-which is also an arrow function so that it only fires upon a button click. 
+it is much more readable–and performant–to move this outside of render() to its own method called handleClick
+which is also an arrow function so that it only fires upon a button click.
 A nice feature of arrow functions is that this is implicitly set for us so we don’t also have to explicitly bind our function.
 
 ```js
 // src/App.js
 class Counter extends Component {
-    constructor() {
+  constructor() {
     this.state = {
       count: 0
     };
@@ -77,7 +71,7 @@ class Counter extends Component {
         count: count + 1
       }));
     };
-  };
+  }
   render() {
     return <button onClick={this.handleClick}>{this.state.count}</button>;
   }
@@ -85,11 +79,10 @@ class Counter extends Component {
 ```
 
 As a final optimization we can use prevState which is built into React.
- It is a callback function that refers to the previous state and since setState()
-  is asynchronous, using prevState ensures no errors around this timing.
-  
+It is a callback function that refers to the previous state and since setState()
+is asynchronous, using prevState ensures no errors around this timing.
 
-```React live=true 
+```React live=true
 class Counter extends React.Component {
     constructor() {
     this.state = {
@@ -107,8 +100,3 @@ class Counter extends React.Component {
   }
 }
 ```
-
-<br/><br/>
-
-
-<PrevNextNav next="#" home="/tutorials/react/" prev="/tutorials/react/state" />

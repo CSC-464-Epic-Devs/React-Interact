@@ -12,6 +12,8 @@ script:
   - eslint "**/*.js"
   - npm run build
   - npm run test
+  - node PlagarismChecker/index.js $(git diff --name-only develop | grep ".*.mdx")
+  - node SpellChecker/index.js $(git diff --name-only develop | grep ".*.mdx")
 
 deploy:
   provider: script

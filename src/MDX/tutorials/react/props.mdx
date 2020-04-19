@@ -1,84 +1,224 @@
 ---
-title: React Home
-date: 2019-12-06
+title: Props
+date: 2019-12-22
 theme: react
+next: /tutorials/react/state
+prev: /tutorials/react/components
 ---
 
-# Props
+import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
 
-Props stand for "Properties." They are read-only elements. 
-It is an object which stores the value of attributes of a tag 
-and work similar to the HTML attributes. It gives a way to pass data 
-from one component to other components. It is similar to function arguments. 
-Props are passed to the component in the same way as arguments passed in a function.
+## Intro
 
-Props are immutable so we cannot modify the props from inside the component. 
-Inside the components, we can add attributes called props.
-These attributes are available in the component 
-as this.props and can be used to render dynamic data in our render method.
+React props are read-only data that gets passed to the react component.
 
-When you need  immutable data in the component, you have to add props to reactDom.render() 
-method in the main.js file of your ReactJS project and used it inside the component 
-in which you need. It can be explained in the below example.
+Consider the following snippet:
 
-### Example 
-
-```js
-const myelement = <Car brand="Ford" />;
+```javascript
+const MakeNameBold = (props) => <b>{props.name}</b>;
 ```
 
-The component receives the argument as a props object:
+We have a component that takes whatever props.name is and it returns it bold.
 
-```js
-class Car extends React.Component {
-  render() {
-    return <h2>I am a {this.props.brand}!</h1>;
+The component could be used like this:
+
+```javascript noInline=true
+const MakeNameBold = (props) => <b>{props.name}</b>;
+
+const DisplayName = (props) => (
+  <div>
+    <MakeNameBold name={props.name} />
+  </div>
+);
+
+render(<DisplayName name="Bacon Cheese and Garlic" />);
+```
+
+**Result: **
+
+```javascript render=true noInline=true
+const MakeNameBold = (props) => <b>{props.name}</b>;
+
+const DisplayName = (props) => (
+  <div>
+    <MakeNameBold name={props.name} />
+  </div>
+);
+
+render(<DisplayName name="Bacon Cheese and Garlic" />);
+```
+
+<br />
+
+## Props Like Commands
+
+What if we wanted to use props like commands to our components?
+
+We will pass an additional prop: **props.showAs** which will hold the value "bold" or "italic".
+
+We'll also rename our MakeNameBold function to ShowName.
+
+```javascript live=true noInline=true
+function ShowName(props) {
+  switch (props.showAs) {
+    case "bold":
+      return <b>{props.name}</b>;
+      break;
+    case "italic":
+      return <i>{props.name}</i>;
+      break;
+    default:
+      return <p>unknown style: bold or italic</p>;
   }
 }
+
+const DisplayName = (props) => (
+  <div>
+    <ShowName name={props.name} showAs={props.showAs} />
+  </div>
+);
+
+render(<DisplayName name="Attack on Titan" showAs="bold" />);
 ```
 
-# Pass Data 
+## Mapping Data With Props
 
-Props are also how you pass data from one component to another, as parameters.
+Our site provides dummy data sets. For our next example we will be using [/datasets/Users15.json](/datasets/Users15.json)
 
+```javascript live=true noInline=true
+const MakeNameBold = (props) => <b>hi</b>;
 
-```React live=true
-class Roommate extends React.Component {
- constructor(props) {
-    super(props);
-    this.state = { Roommate : "Dustin Cook" };
- }
+class DisplayUsers extends React.Component {
+  constructor() {
+    super();
+    this.state = { users: [] };
+  }
 
+  componentDidMount() {
+    fetch("/datasets/Users15.json")
+      .then((res) => res.json())
+      .then((res) => this.setState({ users: res.Users }));
+  }
 
   render() {
-    return (
-      <>
-        <h1>Who lives in my house apart from me?</h1>
-        <h2>{this.state.Roommate}!</h2>
-      </>
-    );
+    const listItems = this.state.users.map((user) => (
+      <li key={user.id}>{user.name}</li>
+    ));
 
+    return (
+      <center>
+        <ul>{listItems}</ul>
+      </center>
+    );
   }
-};
+}
+
+render(<DisplayUsers />);
 ```
 
-<br/><br/>
+## Default Props
 
-<a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/react/state" style={{float: "right", width:"33.33%", textAlign:"center"}}>
-<Button variant="outlined" color="primary">
-Next
-</Button>
-</a>
+Sometimes a certain prop may not be used, so in that case default prop values can be declared as such:
 
-<a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/" style={{float: "right", width:"33.33%", textAlign:"center"}}>
-<Button variant="outlined" color="primary">
-Home
-</Button>
-</a>
+```javascript live=true noInline=true
+function ShowName(props) {
+  switch (props.showAs) {
+    case "bold":
+      return <b>{props.name}</b>;
+      break;
+    case "italic":
+      return <i>{props.name}</i>;
+      break;
+    default:
+      return <p>unknown style: bold or italic</p>;
+  }
+}
 
-<a href="https://csc-464-regular-devs.github.io/React-Interact/tutorials/react/components" style={{float: "left", width:"33.33%", textAlign:"center"}}>
-<Button variant="outlined" color="black">
-Previous
-</Button>
-</a>
+const DisplayName = (props) => (
+  <div>
+    <ShowName name={props.name} showAs={props.showAs} />
+  </div>
+);
 
+DisplayName.defaultProps = {
+  name: "Unassigned",
+  showAs: "bold",
+};
+
+render(<DisplayName name="Attack on Titan" />);
+```
+
+We provided no showAs prop, so it is given "bold" by default.
+
+## Props and the Spread Operator
+
+The js **...** operator can be used to assign props to components
+
+```javascript live=true noInline=true
+myProps = {
+  id: 7,
+  name: "Team Fortress 2",
+  characters: ["Scout", "Spy", "Docter"],
+};
+
+function DisplayGame(props) {
+  return (
+    <div>
+      <p>{JSON.stringify(props)}</p>
+      <p>
+        <b>id:</b> {props.id}
+      </p>
+      <p>
+        <b>name:</b> {props.name}
+      </p>
+      <p>
+        <b>characters:</b> {props.characters.join(", ")}
+      </p>
+    </div>
+  );
+}
+
+render(<DisplayGame {...myProps} />);
+```
+
+## Assessments
+
+### You will have to answer a bunch of questions
+
+<MCQ
+  qs="How would you access Props inside a Component? (Rooms is an Attribute to some element)"
+  op1="props.rooms"
+  op2="props.getRooms()"
+  op3="SomeArray[] = this.props"
+  op4="this.props.rooms"
+  desc="Solution: this.props.rooms"
+/>
+<Threechoicemcq
+  qs="How do you pass Props to Components?"
+  op1="using HTML DOM elements"
+  op2="as function arguments"
+  op3="Object Reference"
+  desc="Solution: as function arguments"
+/>
+<Threechoicemcq
+  qs="How would you pass Props to a Component if you had a constructor? (Rooms is an Attribute to some element)"
+  op1="super(props)"
+  op2="this.rooms = props.rooms"
+  op3="const room = this.props{rooms: ”2”}"
+  desc="Solution: super(props)"
+/>
+<Truefalse
+  qs="Props are Immutable"
+  op1="True"
+  op2="False"
+  desc="Solution: True"
+/>
+<Threechoicemcq
+  qs="How do you use Default Props?"
+  op1="Adding to reactDom.render()"
+  op2="Setting the properties inside Component Constructor"
+  op3="It is set directly during run-time"
+  desc="Solution: Setting the properties inside Component Constructor"
+/>

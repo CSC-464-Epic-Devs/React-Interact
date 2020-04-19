@@ -1,99 +1,87 @@
 ---
-title: Introduction
-date: 2019-12-06
+title: Introduction to React
+date: 2020-03-22
 theme: React
+next: /tutorials/react/jsx
+prev: /tutorials/react/setup
 ---
 
-import PrevNextNav from "components/prevNextNav";
+## Introduction
 
+Let's say we have an HTML file like this:
 
-# Introduction to React
+React is a client-side framework. You can use it to make efficient graphical user interfaces. React is built on top of javascript, so a firm understanding of basic web (js, HTML, CSS) is typically desirable before delving into React, but not entirely required to begin.
 
+A very basic setup for react works like this:
 
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>React App</title>
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
 
-## What is React ?
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="text/jsx">
+      class HelloWorld extends React.Component {
+        render() {
+          return <h1>Hello {this.props.message}</h1>;
+        }
+      }
 
-React (also known as React.js or ReactJS) is a JavaScript library
-for building user interfaces. It is maintained by Facebook and a community 
-of individual developers and companies.
+      ReactDOM.render(
+        <HelloWorld message="ReactDom is an adapter attaching react to an html element." />,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
+```
 
-React can be used as a base in the development of single-page or mobile applications,
-as it is optimal for fetching rapidly changing data that needs to be recorded. 
-However, fetching data is only the beginning of what happens on a web page, 
-which is why complex React applications usually require the use of additional libraries 
-for state management, routing, and interaction with an API Redux, React Router and axios
-are examples of such libraries. 
+This HTML file is stand-alone, you can place this into a file called index.html and open it with your browser.
 
+Let's go over a few of the dependencies listed in the head section.
 
-## History of React
+- First is react itself, that's needed to call reacts API.
 
-React was created by Jordan Walke, a software engineer at Facebook, 
-who released an early prototype of React called "FaxJS". He was influenced by XHP, 
-an HTML component library for PHP. It was first deployed on Facebook's News Feed in 2011 
-and later on Instagram in 2012. It was open-sourced at JSConf US in May 2013.
+- The second script is fetching react-dom, this is what allows us to attach react to a given HTML element as shown with **ReactDom.render**.
 
-React Native, which enables native Android, iOS, and UWP development with React, 
-was announced at Facebook's React Conf in February 2015 and open-sourced in March 2015.
+- Then there is the JSX transformer, this is what will allow us to use JSX in our react script.
 
-On April 18, 2017, Facebook announced React Fiber, 
-a new core algorithm of React library for building user interfaces. 
-React Fiber was to become the foundation of any future improvements and 
-feature development of the React library.
+- The very last script tag is our actual react code and then binding it to our HTML element we gave the id 'root'.
 
-On September 26, 2017, React 16.0 was released to the public.
+### DO NOT BUILD REACT APPS LIKE THIS HOWEVER
 
-On February 16, 2019, React 16.8 was released to the public. 
-The release introduced React Hooks.
+You'll notice it takes a significant amount of time to render. This is because all of the libraries have to be fetched and this is not typically the way react apps are made. Also, the JSX converter is especially slow.
 
+Typically you would serve a pre-built react app to your user with all libraries already loaded and the code minified. The one recommended by Facebook is [create react app](https://create-react-app.dev/docs/getting-started/).
 
-## Why Should you Learn React
+### History
 
-The main question arises in front of us is why one should use ReactJS. 
-There are so many open-source platforms for making the front-end web application
-development easier, like Angular. Let us take a quick look on the benefits of React
-over other competitive technologies or frameworks. With the front-end world changing
-on a daily basis, it’s hard to devote time to learning a new framework – especially
-when that framework could ultimately become a dead end.
+React was created by Jordan Walke, and its initial public release was May 29, 2013, with version (0.3.0).
+Initially React was licensed under [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License#Version_2.0), this changed over time, but currently React is licensed with the MIT License as shown on the [projects repository](https://github.com/facebook/react/blob/master/LICENSE).
+Facebook decided to make the change to the MIT license after getting negative public feedback on the previous licenses favoring the licensor over the licensee.
 
-### Simplicity
+### Why should you learn it?
 
-ReactJS is just simpler to grasp right away. The component-based approach,
- well-defined lifecycle, and use of just plain JavaScript make React very simple to learn, 
-build a professional web (and mobile applications), and support it.
+- People tend to like developing with React, [see for yourself](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-web-frameworks).
 
-### Easy to Learn
+- React has a large community, not only is it supported by large companies such as Facebook. The react community also provides thousands of eyes on the open-source project. Some frameworks are designed to work with React because of its popularity. A few examples are:
 
-Anyone with a basic previous knowledge in programming can easily understand React 
-while Angular 
-and Ember are referred to as ‘Domain specific Language’, 
-implying that it is difficult to learn them.
-For react you just need basic knowledge of CSS and HTML.
+  - [Material UI](https://material-ui.com/)
+  - [Redux](https://redux.js.org/introduction/getting-started)
+  - [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 
-
-### Native Approach
-
-React can be used to create mobile applications (React Native).
-And React is a diehard fan of reusability, meaning extensive code reusability is supported. 
-So at the same time we can make IOS, Android and Web application.
-
-### Data Binding
-
-React uses one-way data binding and an application architecture called Flux controls 
-the flow of data to components through one control point – the dispatcher. 
-It's easier to debug self-contained components of large ReactJS apps.
-
-### Performance
-
-React does not offer any concept of a built-in container for dependency. 
-You can use Browserify, Require JS, EcmaScript 6 modules which we can use via Babel,
-ReactJS-di to inject dependencies automatically.
-
-### Testability
-
-ReactJS applications are super easy to test. React views can be treated as 
-functions of the state, so we can manipulate with state we pass to the ReactJS view 
-and take a look at the output and triggered actions, events, functions, etc.
-
-<br/><br/>
-
-<PrevNextNav next="/tutorials/react/jsx" home="/tutorials/react/" prev="/tutorials/react/setup" />
+- It makes your web app into a tree of reusable components saving you time in the future.

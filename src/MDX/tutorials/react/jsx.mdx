@@ -2,53 +2,95 @@
 title: JSX
 date: 2019-12-06
 theme: default
+next: /tutorials/react/components
+prev: /tutorials/react/introduction
 ---
 
-import PrevNextNav from "components/prevNextNav";
-
-
-# JSX
+import MCQ from "components/mcq";
+import Truefalse from "components/truefalse";
+import Threechoicemcq from "components/threechoicemcq";
 
 ### Take a look at this code snippet:
+
 ```js
 const snippet = <h1>Example<h1>
 ```
 
-This is JSX, a syntax extension to JavaScript. It helps us define the UI for React Components.  
+This is JSX, a syntax extension to JavaScript. It helps us define the UI for React Components.
 
 Using this syntax, lets create some React code!!!
 
 Try to edit this code:
+
 ```js live=true
 function Example() {
-    const sampleHeader = <h1>Edit Me</h1>;
-    return <div>{sampleHeader}</div>
+  const sampleHeader = <h1>Edit Me</h1>;
+  return <div>{sampleHeader}</div>;
 }
-```  
+```
 
 ### What is going on here?
+
 ```js
 function Example() {...}
 ```
+
 This is a React functional component. For now we can think of this as a way to create a UI block.
+
 ```js
 const sampleHeader = <h1>Edit Me</h1>;
-return <div>{sampleHeader}</div>
+return <div>{sampleHeader}</div>;
 ```
-In this snippet, we are storing the heading *Edit Me* in a variable called **sampleHeader**.
+
+In this snippet, we are storing the heading _Edit Me_ in a variable called **sampleHeader**.
 The return statement takes **sampleHeader** and places it in the div block.
 
 This is equivalent to:
+
 ```js live=true
 function Example() {
-    return (
-        <div>
-            <h1>Edit Me</h1>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Edit Me</h1>
+    </div>
+  );
 }
 ```
 
-<br/><br/>
+## Assessments
 
-<PrevNextNav next="/tutorials/react/components" home="/tutorials/react/" prev="/tutorials/react/introduction" />
+### You will have to answer a bunch of questions
+
+<Truefalse
+  qs="Can JSX tags contain children?"
+  op1="Yes"
+  op2="No"
+  desc="Solution: Yes"
+/>
+<Threechoicemcq
+  qs="How do you add javascript expressions inside JSX?"
+  op1="Using Curly braces"
+  op2="Function call to javascript function"
+  op3="Using Script Tag"
+  desc="Solution: Using Curly Braces"
+/>
+<Threechoicemcq
+  qs="JSX is faster than javascript functions. Why?"
+  op1="UI elements are type-safe"
+  op2="HTML is rendered faster"
+  op3="Optimization during compile time"
+  desc="Solution: Optimization during compile time"
+/>
+<Truefalse
+  qs="JSX converts HTML tags into react elements"
+  op1="True"
+  op2="False"
+  desc="Solution: True"
+/>
+<Threechoicemcq
+  qs="What is the correct way of embedding html inside JSX?"
+  op1="Create a const Element of html code and render the element using ReactDom"
+  op2="Html code is embedded directly inside the ReactDom.render()"
+  op3="A separate function call is needed to create HTML elements and attributes"
+  desc="Solution: Create a const Element of html code and render the element using ReactDom"
+/>
